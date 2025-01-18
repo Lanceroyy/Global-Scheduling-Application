@@ -37,6 +37,8 @@ The Global Scheduling Application is a desktop-based solution developed in C# to
 
 8. **Activity Log**  
    - Records login activity (timestamp and username) in a `Login_History.txt` file.
+  
+
 
 ## Technologies  
 - **Language**: C#  
@@ -65,3 +67,7 @@ Requirements
     .NET Framework
     MySQL Database
     Visual Studio IDE
+
+    
+##License
+This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
