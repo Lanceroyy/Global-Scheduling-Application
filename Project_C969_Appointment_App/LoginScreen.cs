@@ -21,44 +21,7 @@ namespace Project_C969_Appointment_App
 
         }
 
-        private void connectButton_Click(object sender, EventArgs e)
-        {
-            //Get connection string
-            string connectionString = ConfigurationManager.ConnectionStrings["localdb"].ConnectionString;
 
-            //Make connection
-            MySqlConnection? myConnection = null;
-            try
-            {
-                myConnection = new MySqlConnection(connectionString);
-
-                //open a connection
-                myConnection.Open();
-                MessageBox.Show("Connection Open");
-            }
-            catch (MySqlException exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-            finally
-            {
-                if (myConnection != null)
-                {
-                    myConnection.Close();
-                }
-            }
-        }
-
-        private void checkConnectionButton_Click(object sender, EventArgs e)
-        {
-            MySqlConnection myConnection = DatabaseConnection.mysqlConnection;
-
-            if (myConnection.State == System.Data.ConnectionState.Open)
-            {
-                MessageBox.Show("Connection Open");
-            }
-
-        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {

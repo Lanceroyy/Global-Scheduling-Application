@@ -15,6 +15,7 @@ namespace Project_C969_Appointment_App.Scripts
     {
 
         public static string currentUser;
+        public static int currentUserId;
 
         //If I Have a Public Static Class, make sure the members are also static
 

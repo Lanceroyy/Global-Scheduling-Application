@@ -97,6 +97,7 @@ namespace Project_C969_Appointment_App.Database
 
                         //Store the username in a universal variable
                         Utils.currentUser = username;
+                        Utils.currentUserId = Appointment.GetUserId(username);
 
                         //Write Successful Login to Record File
                         //File under Project_C969_Appointment_App\bin\Debug\net8.0-windows
@@ -104,6 +105,8 @@ namespace Project_C969_Appointment_App.Database
                         {
                             streamWriter.WriteLine("Successful Login from " + username + " at " + DateTime.Now);
                         }
+
+                        AppointmentAlerts.CheckForUpcomingAppointments(Utils.currentUserId);
                         
                         //Hide the current login screen
                         LoginScreen loginScreen = Application.OpenForms.OfType<LoginScreen>().FirstOrDefault();

@@ -102,8 +102,6 @@ namespace Project_C969_Appointment_App.Scripts
             }
         }
 
-
-
         public static void AdjustToUserTimeZone(DataGridView appTimesDVG)
         {
             try
