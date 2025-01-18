@@ -74,8 +74,8 @@ namespace Project_C969_Appointment_App
             Utils.simpleCustomerDataGridView(this.dvgCustomers);
 
             //Format the Date and Time
-            Utils.PopulateDateTimeComboBoxTEST2(startTimeComboBox);
-            Utils.PopulateDateTimeComboBoxTEST2(endTimeComboBox);
+            Utils.PopulateDateTimeComboBox(startTimeComboBox);
+            Utils.PopulateDateTimeComboBox(endTimeComboBox);
 
 
             TimeZoneInfo estZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"); //Get Timezone by ID

@@ -134,7 +134,8 @@ namespace Project_C969_Appointment_App
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            Localization.AdjustToUserTimeZone(this.dvgAppointments);
+           
+            AppointmentAlerts.CheckForUpcomingAppointments(1);
 
         }
 

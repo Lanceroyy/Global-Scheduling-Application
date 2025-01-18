@@ -105,7 +105,7 @@ namespace Project_C969_Appointment_App.Scripts
             }
             else
             {
-                MessageBox.Show("Please select a row to delete.");
+                MessageBox.Show("Please select a row to update customer name for the appointment.");
                 return false;
             }
         }
@@ -638,33 +638,6 @@ namespace Project_C969_Appointment_App.Scripts
         public static void PopulateDateTimeComboBox(ComboBox timeComboBox)
         {
             // Initialize the ComboBox
-            timeComboBox.DropDownStyle = ComboBoxStyle.DropDownList; // Optional: restrict to only listed values
-            timeComboBox.Width = 150;
-           // Controls.Add(timeComboBox);
-
-            // Define the start and end times
-            DateTime startTime = DateTime.Today.AddHours(8); // 8 AM
-            DateTime endTime = DateTime.Today.AddHours(20); // 8 PM
-
-            // Generate a list of DateTime values with 30-minute intervals
-            List<DateTime> dateTimeValues = new List<DateTime>();
-            DateTime currentTime = startTime;
-
-            while (currentTime <= endTime)
-            {
-                dateTimeValues.Add(currentTime);
-                currentTime = currentTime.AddMinutes(30);
-            }
-
-            // Populate the ComboBox with the formatted DateTime values
-            timeComboBox.DataSource = dateTimeValues;
-            timeComboBox.DisplayMember = "TimeOfDay"; // Display the time part only
-
-        }
-
-        public static void PopulateDateTimeComboBoxTEST2(ComboBox timeComboBox)
-        {
-            // Initialize the ComboBox
             timeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             timeComboBox.AutoSize = true;
 
@@ -720,39 +693,7 @@ namespace Project_C969_Appointment_App.Scripts
                 }
             };
         }
-
-        public static void PopulateDateTimeComboBoxTEST(ComboBox timeComboBox)
-        {
-            // Initialize the ComboBox
-            timeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // Define business hours in EST
-            TimeZoneInfo estTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-            DateTime estStartTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 9, 0, 0); // 9:00 AM EST
-            DateTime estEndTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 17, 0, 0); // 5:00 PM EST
-
-            // Convert EST times to the local time zone
-            DateTime localStartTime = TimeZoneInfo.ConvertTime(estStartTime, estTimeZone, TimeZoneInfo.Local);
-            DateTime localEndTime = TimeZoneInfo.ConvertTime(estEndTime, estTimeZone, TimeZoneInfo.Local);
-
-            // Generate a list of 30-minute intervals
-            List<DateTime> dateTimeValues = new List<DateTime>();
-            DateTime currentTime = localStartTime;
-
-            while (currentTime < localEndTime)
-            {
-                dateTimeValues.Add(currentTime);
-                currentTime = currentTime.AddMinutes(30);
-            }
-
-            // Bind the ComboBox to the list of times
-            timeComboBox.DataSource = dateTimeValues;
-            timeComboBox.DisplayMember = "HH:mm tt"; // Display time in 12-hour format
-        }
-
-
-
-
+      
         public static string convertDateTimetoString(DateTimePicker datePicker, ComboBox timeComboBox, Label timeLabelValue)
         {
             //We can use toString() with the format we want

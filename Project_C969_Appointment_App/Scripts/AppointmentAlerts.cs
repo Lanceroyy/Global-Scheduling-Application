@@ -12,31 +12,41 @@ namespace Project_C969_Appointment_App.Scripts
     {
         public static void CheckForUpcomingAppointments(int userId)
         {
-            // Get the current UTC time
-            DateTime nowUtc = DateTime.UtcNow;
 
-            // Fetch user's upcoming appointments from the database
-            List<Appointment> userAppointments = GetAppointmentsForUser(userId);
-
-            foreach (var appointment in userAppointments)
+            try
             {
-                // Convert appointment time from UTC to local time
-                DateTime appointmentLocalTime = TimeZoneInfo.ConvertTimeFromUtc(appointment.Start, TimeZoneInfo.Local);
+                // Get the current UTC time
+                DateTime nowUtc = DateTime.UtcNow;
 
-                // Check if the appointment is within the next 15 minutes
-                if (appointmentLocalTime > DateTime.Now && appointmentLocalTime <= DateTime.Now.AddMinutes(15))
+                // Fetch user's upcoming appointments from the database
+                List<Appointment> userAppointments = GetAppointmentsForUser(userId);
+
+                foreach (var appointment in userAppointments)
                 {
-                    // Generate an alert for the user
-                    MessageBox.Show(
-                        $"You have an appointment scheduled at {appointmentLocalTime:hh:mm tt} today.",
-                        "Upcoming Appointment Alert",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
+                    // Convert appointment time from UTC to local time
+                    DateTime appointmentLocalTime = TimeZoneInfo.ConvertTimeFromUtc(appointment.Start, TimeZoneInfo.Local);
 
-                    break; // Alert for the first relevant appointment and exit the loop
+
+                    // Check if the appointment is within the next 15 minutes
+                    if (appointmentLocalTime > DateTime.Now && appointmentLocalTime <= DateTime.Now.AddMinutes(15))
+                    {
+                        // Generate an alert for the user
+                        MessageBox.Show(
+                            $"You have an appointment scheduled at {appointmentLocalTime:hh:mm tt} today.",
+                            "Upcoming Appointment Alert",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+
+                        break; // Alert for the first relevant appointment and exit the loop
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking for upcoming appointments: " + ex.Message);
+            }
+
         }
 
 

@@ -14,7 +14,7 @@ namespace Project_C969_Appointment_App.Scripts
 
         //LAMBDA EXPRESSION
         //Simplifies the code reducing boilerplate code instead of writing a conventiional method. Increases readability.
-        public static string DefaultLanguage => "es"; //TODO replace "es" with "CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+        public static string DefaultLanguage => CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 
         public Localization()
         {
@@ -31,10 +31,6 @@ namespace Project_C969_Appointment_App.Scripts
 
             //Grab the two letter language code
             string language = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-
-           // MessageBox.Show("Current Language: " + language); //TESTING ONLY
-
-            language = "es"; //TESTING ONLY
 
             if (loginScreen != null)
             {
@@ -67,14 +63,6 @@ namespace Project_C969_Appointment_App.Scripts
             }
 
             return;
-        }
-
-        public static string GetDefaultLanguage()
-        {
-            //TODO UNCOMMENT THIS WHEN READY
-            //return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-
-            return "es"; //TESTING ONLY
         }
 
 
