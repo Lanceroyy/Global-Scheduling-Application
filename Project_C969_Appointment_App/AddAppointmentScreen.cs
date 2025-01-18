@@ -261,7 +261,6 @@ namespace Project_C969_Appointment_App
         }
 
 
-
         private void LoadAppointments()
         {
             appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
