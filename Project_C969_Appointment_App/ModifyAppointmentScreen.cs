@@ -63,6 +63,21 @@ namespace Project_C969_Appointment_App
 
             appointmentDatePicker.Value = startDateTimeValue;
 
+
+            // Select the customer row and ensure it's visible
+            dvgCustomers.ClearSelection();
+            foreach (DataGridViewRow row in dvgCustomers.Rows)
+            {
+                Customer customer = (Customer)row.DataBoundItem;
+                if (customer.CustomerId == _appointment.CustomerId)
+                {
+                    row.Selected = true;
+                    dvgCustomers.FirstDisplayedScrollingRowIndex = row.Index;
+                    dvgCustomers.CurrentCell = row.Cells[0];
+                    break;  // Exit loop once found
+                }
+            }
+
         }
 
 
@@ -194,9 +209,15 @@ namespace Project_C969_Appointment_App
 
                 // Refresh the appointment list in the main screen
                 MainScreen mainScreen = Application.OpenForms.OfType<MainScreen>().FirstOrDefault();
+
                 if (mainScreen != null)
                 {
+                    mainScreen.dvgAppointments.DataSource = null;
                     mainScreen.dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.All);
+
+
+                    Localization.AdjustToUserTimeZone(mainScreen.dvgAppointments, mainScreen);
+                    mainScreen.dvgAppointments.Refresh();
                 }
 
                 MessageBox.Show("Appointment updated successfully!");
@@ -300,7 +321,8 @@ namespace Project_C969_Appointment_App
                     );
                 }
 
-                Localization.AdjustToUserTimeZone(appTimesDVG);
+                var modifyAppointmentScreen = this;
+                Localization.AdjustToUserTimeZone(appTimesDVG, modifyAppointmentScreen);
 
             }
             else
@@ -321,7 +343,8 @@ namespace Project_C969_Appointment_App
             }
 
             // Adjust appointment times to user's time zone
-            Localization.AdjustToUserTimeZone(appTimesDVG);
+            var modifyAppointmentScreen = this;
+            Localization.AdjustToUserTimeZone(appTimesDVG, modifyAppointmentScreen);
         }
     }
 }

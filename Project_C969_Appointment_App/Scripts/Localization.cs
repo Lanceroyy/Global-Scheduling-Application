@@ -90,34 +90,76 @@ namespace Project_C969_Appointment_App.Scripts
             }
         }
 
-        public static void AdjustToUserTimeZone(DataGridView appTimesDVG)
+        public static void AdjustToUserTimeZone(DataGridView appTimesDVG, Form form)
         {
-            try
+            //IF MAIN FORM 
+            //FORMAT THE APPOINTMENT GRIDS DIFFERENTLY BASED ON THE FORM
+            if (form is MainScreen)
             {
-                // Get the user's local time zone
-                TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
-
-                foreach (DataGridViewRow row in appTimesDVG.Rows)
+                try
                 {
-                    if (row.Cells["start"].Value != null && row.Cells["end"].Value != null)
+                    // Get the user's local time zone
+                    TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
+
+                    foreach (DataGridViewRow row in appTimesDVG.Rows)
                     {
-                        DateTime startTime = DateTime.Parse(row.Cells["start"].Value.ToString());
-                        DateTime endTime = DateTime.Parse(row.Cells["end"].Value.ToString());
+                        if (row.Cells["start"].Value != null && row.Cells["end"].Value != null)
+                        {
+                            // Parse the start and end times as DateTime
+                            if (DateTime.TryParse(row.Cells["start"].Value.ToString(), out DateTime startTime) &&
+                                DateTime.TryParse(row.Cells["end"].Value.ToString(), out DateTime endTime))
+                            {
+                                // Convert the times to the user's time zone
+                                DateTime startInUserZone = TimeZoneInfo.ConvertTimeFromUtc(startTime, userTimeZone);
+                                DateTime endInUserZone = TimeZoneInfo.ConvertTimeFromUtc(endTime, userTimeZone);
 
-                        // Convert to user's time zone
-                        DateTime startInUserZone = TimeZoneInfo.ConvertTime(startTime, TimeZoneInfo.Utc, userTimeZone);
-                        DateTime endInUserZone = TimeZoneInfo.ConvertTime(endTime, TimeZoneInfo.Utc, userTimeZone);
-
-                        // Update the DataGridView with adjusted times
-                        row.Cells["start"].Value = startInUserZone.ToString("hh:mm tt");
-                        row.Cells["end"].Value = endInUserZone.ToString("hh:mm tt");
+                                // Update the DataGridView with properly formatted localized times
+                                row.Cells["start"].Value = startInUserZone.ToString("yyyy-MM-dd hh:mm tt"); // Retain full date and time
+                                row.Cells["end"].Value = endInUserZone.ToString("yyyy-MM-dd hh:mm tt");
+                            }
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adjusting times to user time zone: " + ex.Message);
+                }
+
             }
-            catch (Exception ex)
+
+            //FORMAT THE APPOINTMENT GRIDS DIFFERENTLY
+            else
             {
-                MessageBox.Show("Error adjusting times to user time zone: " + ex.Message);
+                try
+                {
+                    // Get the user's local time zone
+                    TimeZoneInfo userTimeZone = TimeZoneInfo.Local;
+
+                    foreach (DataGridViewRow row in appTimesDVG.Rows)
+                    {
+                        if (row.Cells["start"].Value != null && row.Cells["end"].Value != null)
+                        {
+                            // Parse the start and end times as DateTime
+                            if (DateTime.TryParse(row.Cells["start"].Value.ToString(), out DateTime startTime) &&
+                                DateTime.TryParse(row.Cells["end"].Value.ToString(), out DateTime endTime))
+                            {
+                                // Convert the times to the user's time zone
+                                DateTime startInUserZone = TimeZoneInfo.ConvertTimeFromUtc(startTime, userTimeZone);
+                                DateTime endInUserZone = TimeZoneInfo.ConvertTimeFromUtc(endTime, userTimeZone);
+
+                                // Update the DataGridView with properly formatted localized times
+                                row.Cells["start"].Value = startInUserZone.ToString("hh:mm tt"); // Retain full date and time
+                                row.Cells["end"].Value = endInUserZone.ToString("hh:mm tt");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adjusting times to user time zone: " + ex.Message);
+                }
             }
+            
         }
 
     }

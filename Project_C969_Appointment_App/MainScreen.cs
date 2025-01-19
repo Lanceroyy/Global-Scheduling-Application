@@ -34,7 +34,8 @@ namespace Project_C969_Appointment_App
             Utils.loadAppointmentDataGridView(this.dvgAppointments);
             Utils.simpleAppointmentDataGridView(this.dvgAppointments);
 
-            Localization.AdjustToUserTimeZone(this.dvgAppointments);
+            var mainScreen = this;
+            Localization.AdjustToUserTimeZone(this.dvgAppointments, mainScreen);
         }
 
 
@@ -177,12 +178,14 @@ namespace Project_C969_Appointment_App
         {
             Appointment.GetAppointments(Appointment.TimePeriod.All);
             dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.All);
+            Localization.AdjustToUserTimeZone(this.dvgAppointments, this);
         }
 
         private void viewWeekButton_Click(object sender, EventArgs e)
         {
             Appointment.GetAppointments(Appointment.TimePeriod.Week);
             dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.Week);
+            Localization.AdjustToUserTimeZone(this.dvgAppointments, this);
 
         }
 
@@ -190,6 +193,7 @@ namespace Project_C969_Appointment_App
         {
             Appointment.GetAppointments(Appointment.TimePeriod.Month);
             dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.Month);
+            Localization.AdjustToUserTimeZone(this.dvgAppointments, this);
 
         }
 
@@ -225,15 +229,16 @@ namespace Project_C969_Appointment_App
         {
             if (dvgAppointments.SelectedRows.Count > 0)
             {
+                // Retrieve the selected appointment from the DataGridView
                 var selectedAppointment = (Appointment)dvgAppointments.SelectedRows[0].DataBoundItem;
 
                 int appointmentId = selectedAppointment.AppointmentId;
+                int customerId = selectedAppointment.CustomerId;
 
+                // Pass the selected appointment and appointment ID to the modify form
                 var modifyForm = new ModifyAppointmentScreen(selectedAppointment, appointmentId);
 
-
-                //ShowDialog, makes it so the previous form cannot be interacted with until closed
-                //No code after ShowDialog will run until the form is closed
+                // Show the modify form as a dialog
                 modifyForm.ShowDialog();
 
             }
@@ -241,8 +246,8 @@ namespace Project_C969_Appointment_App
             {
                 MessageBox.Show("Please select a customer to modify.");
             }
-
         }
+
 
         private void calendarButton_Click(object sender, EventArgs e)
         {

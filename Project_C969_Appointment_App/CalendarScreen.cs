@@ -92,7 +92,8 @@ namespace Project_C969_Appointment_App
                     );
                 }
 
-                Localization.AdjustToUserTimeZone(this.appointmentTimesDVG);
+                var calendarScreen = this;
+                Localization.AdjustToUserTimeZone(this.appointmentTimesDVG, calendarScreen);
 
 
             }

@@ -728,31 +728,4 @@ namespace Project_C969_Appointment_App.Scripts
 
 
 
-    //NOTE TO SELF --
-
-    //INTERFACES: These are like abstract classes, but they are used to define a contract for a class.
-    //For example, interfaces are more for functionality than for data. (EX: methods, events etc.)
-
-    //ABSTRACT CLASS: These are like interfaces, but are used more for defining data.
-    //For example, defining constructs, and properties.
-
-    interface FormsInterface
-    {
-        private bool AreAnyTextFieldsEmpty(Form form)
-        {
-            // Get all text boxes on the form
-            foreach (Control control in form.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    // Check if the text box is empty
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
-                    {
-                        return true; // Return true if any text box is empty
-                    }
-                }
-            }
-            return false; // Return false if no text boxes are empty
-        }
-    }
 }

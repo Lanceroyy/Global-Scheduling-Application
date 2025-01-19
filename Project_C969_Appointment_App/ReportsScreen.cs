@@ -26,61 +26,70 @@ namespace Project_C969_Appointment_App
         private void LoadAppointments()
         {
             appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
+
         }
 
         private void scheduleForUserButton_Click(object sender, EventArgs e)
         {
             try
             {
-                // Clear the DataGridView
                 dvgReports.DataSource = null;
                 dvgReports.Columns.Clear();
 
-                // Fetch the user schedules
                 var userSchedules = Reports.GetUserSchedules(appointments);
+                var scheduleData = new List<dynamic>(); // Changed to List<dynamic> instead of BindingList
 
-                // Prepare a binding list for data
-                var scheduleData = new BindingList<dynamic>();
-
-                // Process each user schedule
                 foreach (var scheduleObj in userSchedules)
                 {
                     dynamic schedule = scheduleObj;
-
                     foreach (var appointmentObj in schedule.Appointments)
                     {
                         dynamic appointment = appointmentObj;
 
-                        // Add each appointment to the binding list
+                        // Create the schedule entry as a standard object
                         scheduleData.Add(new
                         {
                             UserId = schedule.UserId,
                             AppointmentType = appointment.Type,
-                            StartTime = appointment.Start,
-                            EndTime = appointment.End
+                            Start = appointment.Start,  // Capital S for Start
+                            End = appointment.End       // Capital E for End
                         });
                     }
                 }
 
-                // Bind the data to the DataGridView
-                dvgReports.DataSource = scheduleData;
+                // Convert to DataTable which is likely what other forms are using
+                DataTable dt = new DataTable();
+                dt.Columns.Add("UserId");
+                dt.Columns.Add("AppointmentType");
+                dt.Columns.Add("start"); // lowercase to match what AdjustUserTimeZone expects
+                dt.Columns.Add("end");   // lowercase to match what AdjustUserTimeZone expects
 
-                // Optional: Adjust column headers
+                foreach (var item in scheduleData)
+                {
+                    dt.Rows.Add(
+                        item.UserId,
+                        item.AppointmentType,
+                        item.Start,
+                        item.End
+                    );
+                }
+
+                dvgReports.DataSource = dt;
+
                 dvgReports.Columns["UserId"].HeaderText = "User ID";
                 dvgReports.Columns["AppointmentType"].HeaderText = "Type";
-                dvgReports.Columns["StartTime"].HeaderText = "Start Time";
-                dvgReports.Columns["EndTime"].HeaderText = "End Time";
+                dvgReports.Columns["start"].HeaderText = "Start";
+                dvgReports.Columns["end"].HeaderText = "End";
 
+                Localization.AdjustToUserTimeZone(this.dvgReports, this);
                 dvgReports.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {
-                // Handle errors gracefully
-                MessageBox.Show($"Error generating user schedules: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error generating user schedules: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
 
         private void typesByMonthButton_Click(object sender, EventArgs e)

@@ -151,7 +151,13 @@ namespace Project_C969_Appointment_App
                 Appointment.AddAppointment(appointment);
 
                 MainScreen mainScreen = Application.OpenForms.OfType<MainScreen>().FirstOrDefault();
-                mainScreen.dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.All);
+                if (mainScreen != null)
+                {
+                    mainScreen.dvgAppointments.DataSource = null;
+                    mainScreen.dvgAppointments.DataSource = Appointment.GetAppointments(Appointment.TimePeriod.All);
+                    Localization.AdjustToUserTimeZone(mainScreen.dvgAppointments, mainScreen);
+                    mainScreen.dvgAppointments.Refresh();
+                }
 
                 this.Close();
             }
@@ -250,7 +256,8 @@ namespace Project_C969_Appointment_App
                     );
                 }
 
-                Localization.AdjustToUserTimeZone(appTimesDVG);
+                var addAppointmentScreen = this;
+                Localization.AdjustToUserTimeZone(appTimesDVG, addAppointmentScreen);
 
             }
             else
@@ -270,7 +277,8 @@ namespace Project_C969_Appointment_App
             }
 
             // Adjust appointment times to user's time zone
-            Localization.AdjustToUserTimeZone(appTimesDVG);
+            var addAppointmentScreen = this;
+            Localization.AdjustToUserTimeZone(appTimesDVG, addAppointmentScreen);
         }
     }
 }
