@@ -16,7 +16,8 @@ namespace Project_C969_Appointment_App.Database
         public static MySqlConnection mysqlConnection { get; set; }
         public static string connectionString = ConfigurationManager.ConnectionStrings["localdb"].ConnectionString;
 
-        private const string loginHistoryFile = "Login_History.txt";
+      
+        private static string loginHistoryFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Login_History.txt");
 
         public static void startConnection()
         {
