@@ -49,7 +49,7 @@
             // 
             titleText.AutoSize = true;
             titleText.Font = new Font("Segoe UI", 16F);
-            titleText.Location = new Point(105, 4);
+            titleText.Location = new Point(153, 4);
             titleText.Name = "titleText";
             titleText.Size = new Size(297, 37);
             titleText.TabIndex = 2;
@@ -57,21 +57,21 @@
             // 
             // userNameTextBox
             // 
-            userNameTextBox.Location = new Point(139, 82);
+            userNameTextBox.Location = new Point(191, 82);
             userNameTextBox.Name = "userNameTextBox";
             userNameTextBox.Size = new Size(220, 34);
             userNameTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(139, 153);
+            passwordTextBox.Location = new Point(191, 153);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(220, 34);
             passwordTextBox.TabIndex = 4;
             // 
             // userNameLabel
             // 
-            userNameLabel.Location = new Point(139, 51);
+            userNameLabel.Location = new Point(191, 51);
             userNameLabel.Name = "userNameLabel";
             userNameLabel.Size = new Size(220, 28);
             userNameLabel.TabIndex = 5;
@@ -80,7 +80,7 @@
             // 
             // passwordLabel
             // 
-            passwordLabel.Location = new Point(139, 122);
+            passwordLabel.Location = new Point(191, 122);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(220, 28);
             passwordLabel.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(169, 193);
+            loginButton.Location = new Point(221, 210);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(160, 66);
             loginButton.TabIndex = 7;
@@ -101,7 +101,7 @@
             // 
             userLocationTitleLabel.AutoSize = true;
             userLocationTitleLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userLocationTitleLabel.Location = new Point(178, 262);
+            userLocationTitleLabel.Location = new Point(231, 279);
             userLocationTitleLabel.Name = "userLocationTitleLabel";
             userLocationTitleLabel.Size = new Size(141, 28);
             userLocationTitleLabel.TabIndex = 8;
@@ -110,7 +110,7 @@
             // countryLabel
             // 
             countryLabel.AutoSize = true;
-            countryLabel.Location = new Point(246, 290);
+            countryLabel.Location = new Point(223, 317);
             countryLabel.Name = "countryLabel";
             countryLabel.Size = new Size(82, 28);
             countryLabel.TabIndex = 9;
@@ -119,7 +119,7 @@
             // regionLabel
             // 
             regionLabel.AutoSize = true;
-            regionLabel.Location = new Point(246, 318);
+            regionLabel.Location = new Point(228, 345);
             regionLabel.Name = "regionLabel";
             regionLabel.Size = new Size(73, 28);
             regionLabel.TabIndex = 10;
@@ -128,7 +128,7 @@
             // languageLabel
             // 
             languageLabel.AutoSize = true;
-            languageLabel.Location = new Point(246, 346);
+            languageLabel.Location = new Point(216, 373);
             languageLabel.Name = "languageLabel";
             languageLabel.Size = new Size(97, 28);
             languageLabel.TabIndex = 11;
@@ -137,7 +137,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(166, 290);
+            label1.Location = new Point(221, 317);
             label1.Name = "label1";
             label1.Size = new Size(86, 28);
             label1.TabIndex = 12;
@@ -146,7 +146,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(175, 318);
+            label2.Location = new Point(226, 345);
             label2.Name = "label2";
             label2.Size = new Size(77, 28);
             label2.TabIndex = 13;
@@ -155,7 +155,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(151, 346);
+            label3.Location = new Point(214, 373);
             label3.Name = "label3";
             label3.Size = new Size(101, 28);
             label3.TabIndex = 14;
@@ -164,7 +164,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(144, 374);
+            label4.Location = new Point(210, 401);
             label4.Name = "label4";
             label4.Size = new Size(108, 28);
             label4.TabIndex = 15;
@@ -173,7 +173,7 @@
             // timeZoneLabel
             // 
             timeZoneLabel.AutoSize = true;
-            timeZoneLabel.Location = new Point(246, 374);
+            timeZoneLabel.Location = new Point(210, 401);
             timeZoneLabel.Name = "timeZoneLabel";
             timeZoneLabel.Size = new Size(108, 28);
             timeZoneLabel.TabIndex = 16;
@@ -183,7 +183,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(524, 404);
+            ClientSize = new Size(643, 429);
             Controls.Add(timeZoneLabel);
             Controls.Add(label4);
             Controls.Add(label3);

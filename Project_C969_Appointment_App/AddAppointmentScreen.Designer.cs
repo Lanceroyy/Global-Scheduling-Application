@@ -275,11 +275,11 @@
             viewAppointmentsLabel.TabIndex = 70;
             viewAppointmentsLabel.Text = "View Appointments";
             // 
-            // appointmentTimesDVG
+            // appTimesDVG
             // 
             appTimesDVG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             appTimesDVG.Location = new Point(727, 618);
-            appTimesDVG.Name = "appointmentTimesDVG";
+            appTimesDVG.Name = "appTimesDVG";
             appTimesDVG.RowHeadersWidth = 51;
             appTimesDVG.Size = new Size(448, 245);
             appTimesDVG.TabIndex = 71;
@@ -295,8 +295,7 @@
             // 
             // AddAppointmentScreen
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1187, 869);
             Controls.Add(appTimesDVG);
             Controls.Add(viewAppointmentsLabel);
