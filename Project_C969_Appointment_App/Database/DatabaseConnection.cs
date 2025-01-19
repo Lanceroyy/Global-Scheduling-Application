@@ -16,8 +16,7 @@ namespace Project_C969_Appointment_App.Database
         public static MySqlConnection mysqlConnection { get; set; }
         public static string connectionString = ConfigurationManager.ConnectionStrings["localdb"].ConnectionString;
 
-      
-        private static string loginHistoryFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Login_History.txt");
+        private static string loginHistoryFile = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName, "Login_History.txt");
 
         public static void startConnection()
         {
@@ -104,7 +103,7 @@ namespace Project_C969_Appointment_App.Database
                         //File under Project_C969_Appointment_App\bin\Debug\net8.0-windows
                         using (StreamWriter streamWriter = new StreamWriter(loginHistoryFile, true))
                         {
-                            streamWriter.WriteLine("Successful Login from " + username + " at " + DateTime.Now);
+                            streamWriter.WriteLine("Successful Login from user " + username + " at " + DateTime.UtcNow + " (UTC)");
                         }
 
                         AppointmentAlerts.CheckForUpcomingAppointments(Utils.currentUserId);
@@ -134,7 +133,7 @@ namespace Project_C969_Appointment_App.Database
                         //File under Project_C969_Appointment_App\bin\Debug\net8.0-windows
                         using (StreamWriter streamWriter = new StreamWriter(loginHistoryFile, true))
                         {
-                            streamWriter.WriteLine("Failed Login from " + username + " at " + DateTime.Now);
+                            streamWriter.WriteLine("Failed Login from user " + username + " at " + DateTime.UtcNow + " (UTC)");
                         }
                     }
                 }

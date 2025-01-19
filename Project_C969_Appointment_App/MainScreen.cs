@@ -257,7 +257,7 @@ namespace Project_C969_Appointment_App
 
         private void searchAppointmentTextBox_TextChanged(object sender, EventArgs e)
         {
-            Utils.SearchCustomerDataGridView(dvgAppointments, searchAppointmentTextBox.Text);
+            Utils.SearchAppointmentDataGridView(dvgAppointments, searchAppointmentTextBox.Text);
         }
     }
 }

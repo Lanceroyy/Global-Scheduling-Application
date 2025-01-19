@@ -10,7 +10,8 @@ namespace Project_C969_Appointment_App.Scripts
 {
     public static class Reports
     {
- 
+        //LAMBDA EXPRESSIONS FOR PART A7
+
         public static IEnumerable<object> GetAppointmentTypesByMonth(BindingList<Appointment> appointments)
         {
             return appointments

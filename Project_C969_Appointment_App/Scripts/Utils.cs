@@ -574,7 +574,7 @@ namespace Project_C969_Appointment_App.Scripts
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error searching appointments: " + ex.Message);
+                MessageBox.Show("Error searching customers: " + ex.Message);
             }
         }
 
@@ -582,37 +582,35 @@ namespace Project_C969_Appointment_App.Scripts
         {
             try
             {
+                var appointments = new BindingList<Appointment>();
+                MainScreen mainScreen = Application.OpenForms.OfType<MainScreen>().FirstOrDefault();
+
+
                 if (string.IsNullOrEmpty(searchText))
                 {
-                    // Show all rows if search text is empty
-                    var appointments = Appointment.GetAppointments(Appointment.TimePeriod.All); //TODO -- Replace with real customer ID or Change Method
+                    appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
                     appointmentsDataGridView.DataSource = new BindingList<Appointment>(appointments);
+
+                    Localization.AdjustToUserTimeZone(appointmentsDataGridView, mainScreen);
+
                     return;
                 }
 
-                // Get the current data source and handle both List<T> and BindingList<T>
-                IEnumerable<Appointment> currentAppointments;
-                if (appointmentsDataGridView.DataSource is List<Appointment> appointmentsList)
-                {
-                    currentAppointments = appointmentsList;
-                }
-                else if (appointmentsDataGridView.DataSource is BindingList<Appointment> appointmentsBindingList)
-                {
-                    currentAppointments = appointmentsBindingList.ToList();
-                }
-                else
-                {
-                    throw new InvalidOperationException("Unexpected data source type");
-                }
+                appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
+                var searchLower = searchText.ToLower();
 
-                // Filter the appointments
-                var filteredAppointments = currentAppointments
-                    .Where(a => a.Title.ToLower()
-                        .Contains(searchText.ToLower()))
+                var filteredAppointments = appointments
+                    .Where(a => a != null && (
+                        (a.Title != null && a.Title.ToLower().Contains(searchLower)) ||
+                        (a.Type != null && a.Type.ToLower().Contains(searchLower)) ||
+                        (a.Description != null && a.Description.ToLower().Contains(searchLower)) ||
+                        (a.CustomerName != null && a.CustomerName.ToLower().Contains(searchLower))
+                    ))
                     .ToList();
 
-                // Create new BindingList with filtered results
                 appointmentsDataGridView.DataSource = new BindingList<Appointment>(filteredAppointments);
+
+                Localization.AdjustToUserTimeZone(appointmentsDataGridView, mainScreen);
             }
             catch (Exception ex)
             {
@@ -620,9 +618,9 @@ namespace Project_C969_Appointment_App.Scripts
             }
         }
 
-    
 
-//----------------------------------DateTime Methods----------------------------------------------
+
+        //----------------------------------DateTime Methods----------------------------------------------
 
         public static void formatDateTimePickers(DateTimePicker datePicker)
         {

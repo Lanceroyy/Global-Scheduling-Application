@@ -44,7 +44,6 @@
             exitButton = new Button();
             customerBindingSource = new BindingSource(components);
             dvgCustomers = new DataGridView();
-            testButton = new Button();
             reportsButton = new Button();
             bindingSource1 = new BindingSource(components);
             searchCustomerTextBox = new TextBox();
@@ -208,16 +207,6 @@
             dvgCustomers.Size = new Size(1119, 428);
             dvgCustomers.TabIndex = 16;
             // 
-            // testButton
-            // 
-            testButton.Location = new Point(388, 541);
-            testButton.Name = "testButton";
-            testButton.Size = new Size(68, 52);
-            testButton.TabIndex = 17;
-            testButton.Text = "test";
-            testButton.UseVisualStyleBackColor = true;
-            testButton.Click += testButton_Click;
-            // 
             // reportsButton
             // 
             reportsButton.Location = new Point(520, 520);
@@ -349,7 +338,6 @@
             Controls.Add(searchCustomerLabel);
             Controls.Add(searchCustomerTextBox);
             Controls.Add(reportsButton);
-            Controls.Add(testButton);
             Controls.Add(dvgCustomers);
             Controls.Add(exitButton);
             Controls.Add(appointmentsLabel);
@@ -392,7 +380,6 @@
         private Button exitButton;
         private BindingSource customerBindingSource;
         public DataGridView dvgCustomers;
-        private Button testButton;
         private Button reportsButton;
         private BindingSource bindingSource1;
         private TextBox searchCustomerTextBox;
