@@ -35,21 +35,17 @@
             passwordLabel = new Label();
             loginButton = new Button();
             userLocationTitleLabel = new Label();
-            countryLabel = new Label();
-            regionLabel = new Label();
-            languageLabel = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             timeZoneLabel = new Label();
+            languageLabel = new Label();
+            regionLabel = new Label();
+            countryLabel = new Label();
             SuspendLayout();
             // 
             // titleText
             // 
             titleText.AutoSize = true;
             titleText.Font = new Font("Segoe UI", 16F);
-            titleText.Location = new Point(153, 4);
+            titleText.Location = new Point(88, 13);
             titleText.Name = "titleText";
             titleText.Size = new Size(297, 37);
             titleText.TabIndex = 2;
@@ -57,21 +53,21 @@
             // 
             // userNameTextBox
             // 
-            userNameTextBox.Location = new Point(191, 82);
+            userNameTextBox.Location = new Point(126, 91);
             userNameTextBox.Name = "userNameTextBox";
             userNameTextBox.Size = new Size(220, 34);
             userNameTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(191, 153);
+            passwordTextBox.Location = new Point(126, 162);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(220, 34);
             passwordTextBox.TabIndex = 4;
             // 
             // userNameLabel
             // 
-            userNameLabel.Location = new Point(191, 51);
+            userNameLabel.Location = new Point(126, 60);
             userNameLabel.Name = "userNameLabel";
             userNameLabel.Size = new Size(220, 28);
             userNameLabel.TabIndex = 5;
@@ -80,7 +76,7 @@
             // 
             // passwordLabel
             // 
-            passwordLabel.Location = new Point(191, 122);
+            passwordLabel.Location = new Point(126, 131);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(220, 28);
             passwordLabel.TabIndex = 6;
@@ -89,7 +85,7 @@
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(221, 210);
+            loginButton.Location = new Point(156, 219);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(160, 66);
             loginButton.TabIndex = 7;
@@ -101,94 +97,54 @@
             // 
             userLocationTitleLabel.AutoSize = true;
             userLocationTitleLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userLocationTitleLabel.Location = new Point(231, 279);
+            userLocationTitleLabel.Location = new Point(166, 288);
             userLocationTitleLabel.Name = "userLocationTitleLabel";
             userLocationTitleLabel.Size = new Size(141, 28);
             userLocationTitleLabel.TabIndex = 8;
             userLocationTitleLabel.Text = "User Location";
             // 
-            // countryLabel
+            // timeZoneLabel
             // 
-            countryLabel.AutoSize = true;
-            countryLabel.Location = new Point(223, 317);
-            countryLabel.Name = "countryLabel";
-            countryLabel.Size = new Size(82, 28);
-            countryLabel.TabIndex = 9;
-            countryLabel.Text = "Country";
-            // 
-            // regionLabel
-            // 
-            regionLabel.AutoSize = true;
-            regionLabel.Location = new Point(228, 345);
-            regionLabel.Name = "regionLabel";
-            regionLabel.Size = new Size(73, 28);
-            regionLabel.TabIndex = 10;
-            regionLabel.Text = "Region";
+            timeZoneLabel.AutoSize = true;
+            timeZoneLabel.Location = new Point(101, 416);
+            timeZoneLabel.Name = "timeZoneLabel";
+            timeZoneLabel.Size = new Size(107, 28);
+            timeZoneLabel.TabIndex = 24;
+            timeZoneLabel.Text = "Time Zone:";
             // 
             // languageLabel
             // 
             languageLabel.AutoSize = true;
-            languageLabel.Location = new Point(216, 373);
+            languageLabel.Location = new Point(107, 388);
             languageLabel.Name = "languageLabel";
-            languageLabel.Size = new Size(97, 28);
-            languageLabel.TabIndex = 11;
-            languageLabel.Text = "Language";
+            languageLabel.Size = new Size(101, 28);
+            languageLabel.TabIndex = 22;
+            languageLabel.Text = "Language:";
             // 
-            // label1
+            // regionLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(221, 317);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 28);
-            label1.TabIndex = 12;
-            label1.Text = "Country:";
+            regionLabel.AutoSize = true;
+            regionLabel.Location = new Point(131, 360);
+            regionLabel.Name = "regionLabel";
+            regionLabel.Size = new Size(77, 28);
+            regionLabel.TabIndex = 21;
+            regionLabel.Text = "Region:";
             // 
-            // label2
+            // countryLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(226, 345);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 28);
-            label2.TabIndex = 13;
-            label2.Text = "Region:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(214, 373);
-            label3.Name = "label3";
-            label3.Size = new Size(101, 28);
-            label3.TabIndex = 14;
-            label3.Text = "Language:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(210, 401);
-            label4.Name = "label4";
-            label4.Size = new Size(108, 28);
-            label4.TabIndex = 15;
-            label4.Text = "Local Time:";
-            // 
-            // timeZoneLabel
-            // 
-            timeZoneLabel.AutoSize = true;
-            timeZoneLabel.Location = new Point(210, 401);
-            timeZoneLabel.Name = "timeZoneLabel";
-            timeZoneLabel.Size = new Size(108, 28);
-            timeZoneLabel.TabIndex = 16;
-            timeZoneLabel.Text = "Local Time:";
+            countryLabel.AutoSize = true;
+            countryLabel.Location = new Point(126, 332);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(86, 28);
+            countryLabel.TabIndex = 20;
+            countryLabel.Text = "Country:";
             // 
             // LoginScreen
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(643, 429);
+            ClientSize = new Size(471, 461);
             Controls.Add(timeZoneLabel);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(languageLabel);
             Controls.Add(regionLabel);
             Controls.Add(countryLabel);
@@ -201,6 +157,7 @@
             Controls.Add(titleText);
             Name = "LoginScreen";
             Text = "Login Screen";
+            Load += LoginScreen_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,13 +170,12 @@
         public Button loginButton;
         public TextBox userNameTextBox;
         private Label userLocationTitleLabel;
-        public Label countryLabel;
         public Label regionLabel;
         public Label languageLabel;
-        public Label label1;
-        public Label label2;
-        public Label label3;
-        public Label label4;
+
         public Label timeZoneLabel;
+
+        public Label countryLabel;
+
     }
 }

@@ -31,6 +31,9 @@ namespace Project_C969_Appointment_App
             DatabaseConnection.loginToDatabase(userName, password);
         }
 
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

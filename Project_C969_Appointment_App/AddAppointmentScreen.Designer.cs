@@ -82,7 +82,7 @@
             dvgCustomers.Name = "dvgCustomers";
             dvgCustomers.RowHeadersWidth = 51;
             dvgCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dvgCustomers.Size = new Size(722, 482);
+            dvgCustomers.Size = new Size(742, 482);
             dvgCustomers.TabIndex = 35;
             dvgCustomers.CellContentClick += dvgCustomers_CellContentClick;
             // 
@@ -278,7 +278,7 @@
             // appTimesDVG
             // 
             appTimesDVG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appTimesDVG.Location = new Point(727, 618);
+            appTimesDVG.Location = new Point(747, 618);
             appTimesDVG.Name = "appTimesDVG";
             appTimesDVG.RowHeadersWidth = 51;
             appTimesDVG.Size = new Size(448, 245);
@@ -296,7 +296,7 @@
             // AddAppointmentScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1187, 869);
+            ClientSize = new Size(1207, 869);
             Controls.Add(appTimesDVG);
             Controls.Add(viewAppointmentsLabel);
             Controls.Add(viewAppointmentsCalendar);

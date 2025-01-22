@@ -255,7 +255,7 @@ namespace Project_C969_Appointment_App.Scripts
             appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "AppointmentId",
-                HeaderText = "Appoint\nID",
+                HeaderText = "App\nID",
                 Name = "AppointmentId",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
                 
@@ -264,7 +264,7 @@ namespace Project_C969_Appointment_App.Scripts
             appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "CustomerName",
-                HeaderText = "Name",
+                HeaderText = "Cust-Name",
                 Name = "CustomerName",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });

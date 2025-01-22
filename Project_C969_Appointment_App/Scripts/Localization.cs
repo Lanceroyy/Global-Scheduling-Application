@@ -74,15 +74,15 @@ namespace Project_C969_Appointment_App.Scripts
                 TimeZoneInfo timeZone = TimeZoneInfo.Local;
 
                 // Display the time zone name
-                timeZoneLabel.Text = timeZone.DaylightName;
+                timeZoneLabel.Text ="Time Zone: " + timeZone.DaylightName;
 
                 // Obtain location information
                 CultureInfo culture = CultureInfo.CurrentCulture;
                 RegionInfo region = new RegionInfo(culture.Name);
 
-                countryLabel.Text = region.DisplayName;
-                regionLabel.Text = region.Name;
-                languageLabel.Text = culture.TwoLetterISOLanguageName;
+                countryLabel.Text = "Country: " + region.DisplayName;
+                regionLabel.Text = "Region: " + region.Name;
+                languageLabel.Text = languageLabel.Text = "Language: " + culture.TwoLetterISOLanguageName;
             }
             catch (Exception ex)
             {
