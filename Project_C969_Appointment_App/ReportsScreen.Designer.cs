@@ -39,9 +39,10 @@
             // 
             // typesByMonthButton
             // 
-            typesByMonthButton.Location = new Point(35, 429);
+            typesByMonthButton.Location = new Point(28, 342);
+            typesByMonthButton.Margin = new Padding(2, 2, 2, 2);
             typesByMonthButton.Name = "typesByMonthButton";
-            typesByMonthButton.Size = new Size(129, 83);
+            typesByMonthButton.Size = new Size(106, 62);
             typesByMonthButton.TabIndex = 0;
             typesByMonthButton.Text = "Types By Month";
             typesByMonthButton.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // scheduleForUserButton
             // 
-            scheduleForUserButton.Location = new Point(181, 430);
+            scheduleForUserButton.Location = new Point(147, 342);
+            scheduleForUserButton.Margin = new Padding(2, 2, 2, 2);
             scheduleForUserButton.Name = "scheduleForUserButton";
-            scheduleForUserButton.Size = new Size(142, 82);
+            scheduleForUserButton.Size = new Size(116, 62);
             scheduleForUserButton.TabIndex = 1;
             scheduleForUserButton.Text = "User Schedule";
             scheduleForUserButton.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // customerHoursButton
             // 
-            customerHoursButton.Location = new Point(347, 430);
+            customerHoursButton.Location = new Point(283, 342);
+            customerHoursButton.Margin = new Padding(2, 2, 2, 2);
             customerHoursButton.Name = "customerHoursButton";
-            customerHoursButton.Size = new Size(142, 82);
+            customerHoursButton.Size = new Size(116, 62);
             customerHoursButton.TabIndex = 2;
             customerHoursButton.Text = "Total Hours By Customer";
             customerHoursButton.UseVisualStyleBackColor = true;
@@ -70,27 +73,30 @@
             // dvgReports
             // 
             dvgReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgReports.Location = new Point(35, 53);
+            dvgReports.Location = new Point(28, 60);
+            dvgReports.Margin = new Padding(2, 2, 2, 2);
             dvgReports.Name = "dvgReports";
             dvgReports.RowHeadersWidth = 51;
-            dvgReports.Size = new Size(769, 370);
+            dvgReports.Size = new Size(629, 278);
             dvgReports.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(347, 9);
+            label1.Location = new Point(284, 7);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(120, 41);
+            label1.Size = new Size(94, 32);
             label1.TabIndex = 4;
             label1.Text = "Reports";
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(688, 429);
+            exitButton.Location = new Point(562, 342);
+            exitButton.Margin = new Padding(2, 2, 2, 2);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(129, 83);
+            exitButton.Size = new Size(106, 62);
             exitButton.TabIndex = 5;
             exitButton.Text = "Exit";
             exitButton.UseVisualStyleBackColor = true;
@@ -98,15 +104,16 @@
             // 
             // ReportsScreen
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(829, 512);
+            ClientSize = new Size(678, 409);
             Controls.Add(exitButton);
             Controls.Add(label1);
             Controls.Add(dvgReports);
             Controls.Add(customerHoursButton);
             Controls.Add(scheduleForUserButton);
             Controls.Add(typesByMonthButton);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ReportsScreen";
             Text = "ReportsScreen";
             ((System.ComponentModel.ISupportInitialize)dvgReports).EndInit();

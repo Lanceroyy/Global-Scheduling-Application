@@ -67,15 +67,15 @@
             // 
             viewLabel.AutoSize = true;
             viewLabel.Font = new Font("Segoe UI", 14F);
-            viewLabel.Location = new Point(140, 453);
+            viewLabel.Location = new Point(140, 339);
             viewLabel.Name = "viewLabel";
-            viewLabel.Size = new Size(65, 32);
+            viewLabel.Size = new Size(53, 25);
             viewLabel.TabIndex = 2;
             viewLabel.Text = "View";
             // 
             // viewAllButton
             // 
-            viewAllButton.Location = new Point(359, 864);
+            viewAllButton.Location = new Point(359, 639);
             viewAllButton.Name = "viewAllButton";
             viewAllButton.Size = new Size(100, 50);
             viewAllButton.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             // viewWeekButton
             // 
-            viewWeekButton.Location = new Point(464, 864);
+            viewWeekButton.Location = new Point(464, 639);
             viewWeekButton.Name = "viewWeekButton";
             viewWeekButton.Size = new Size(100, 50);
             viewWeekButton.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             // viewMonthButton
             // 
-            viewMonthButton.Location = new Point(570, 864);
+            viewMonthButton.Location = new Point(570, 639);
             viewMonthButton.Name = "viewMonthButton";
             viewMonthButton.Size = new Size(100, 50);
             viewMonthButton.TabIndex = 5;
@@ -105,9 +105,9 @@
             // 
             // addAppointmentButton
             // 
-            addAppointmentButton.Location = new Point(13, 537);
+            addAppointmentButton.Location = new Point(13, 423);
             addAppointmentButton.Name = "addAppointmentButton";
-            addAppointmentButton.Size = new Size(122, 57);
+            addAppointmentButton.Size = new Size(122, 45);
             addAppointmentButton.TabIndex = 6;
             addAppointmentButton.Text = "Add";
             addAppointmentButton.UseVisualStyleBackColor = true;
@@ -115,9 +115,9 @@
             // 
             // modifyAppointmentButton
             // 
-            modifyAppointmentButton.Location = new Point(14, 618);
+            modifyAppointmentButton.Location = new Point(14, 504);
             modifyAppointmentButton.Name = "modifyAppointmentButton";
-            modifyAppointmentButton.Size = new Size(122, 57);
+            modifyAppointmentButton.Size = new Size(122, 45);
             modifyAppointmentButton.TabIndex = 7;
             modifyAppointmentButton.Text = "Update";
             modifyAppointmentButton.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // 
             // deleteAppointmentButton
             // 
-            deleteAppointmentButton.Location = new Point(14, 700);
+            deleteAppointmentButton.Location = new Point(14, 579);
             deleteAppointmentButton.Name = "deleteAppointmentButton";
-            deleteAppointmentButton.Size = new Size(122, 57);
+            deleteAppointmentButton.Size = new Size(122, 45);
             deleteAppointmentButton.TabIndex = 8;
             deleteAppointmentButton.Text = "Delete";
             deleteAppointmentButton.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             // 
             modifyCustomerButton.Location = new Point(13, 165);
             modifyCustomerButton.Name = "modifyCustomerButton";
-            modifyCustomerButton.Size = new Size(122, 57);
+            modifyCustomerButton.Size = new Size(122, 45);
             modifyCustomerButton.TabIndex = 9;
             modifyCustomerButton.Text = "Update";
             modifyCustomerButton.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // 
             addCustomerButton.Location = new Point(13, 86);
             addCustomerButton.Name = "addCustomerButton";
-            addCustomerButton.Size = new Size(122, 57);
+            addCustomerButton.Size = new Size(122, 45);
             addCustomerButton.TabIndex = 10;
             addCustomerButton.Text = "Add";
             addCustomerButton.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // 
             deleteCustomerButton.Location = new Point(13, 244);
             deleteCustomerButton.Name = "deleteCustomerButton";
-            deleteCustomerButton.Size = new Size(122, 57);
+            deleteCustomerButton.Size = new Size(122, 45);
             deleteCustomerButton.TabIndex = 11;
             deleteCustomerButton.Text = "Delete";
             deleteCustomerButton.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
             customersLabel.Font = new Font("Segoe UI", 18F);
             customersLabel.Location = new Point(510, 38);
             customersLabel.Name = "customersLabel";
-            customersLabel.Size = new Size(160, 41);
+            customersLabel.Size = new Size(127, 32);
             customersLabel.TabIndex = 12;
             customersLabel.Text = "Customers";
             // 
@@ -177,15 +177,15 @@
             // 
             appointmentsLabel.AutoSize = true;
             appointmentsLabel.Font = new Font("Segoe UI", 18F);
-            appointmentsLabel.Location = new Point(485, 490);
+            appointmentsLabel.Location = new Point(485, 376);
             appointmentsLabel.Name = "appointmentsLabel";
-            appointmentsLabel.Size = new Size(207, 41);
+            appointmentsLabel.Size = new Size(165, 32);
             appointmentsLabel.TabIndex = 14;
             appointmentsLabel.Text = "Appointments";
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(905, 864);
+            exitButton.Location = new Point(867, 639);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(100, 50);
             exitButton.TabIndex = 15;
@@ -205,14 +205,14 @@
             dvgCustomers.RowHeadersVisible = false;
             dvgCustomers.RowHeadersWidth = 51;
             dvgCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dvgCustomers.Size = new Size(867, 321);
+            dvgCustomers.Size = new Size(827, 203);
             dvgCustomers.TabIndex = 16;
             // 
             // reportsButton
             // 
-            reportsButton.Location = new Point(442, 426);
+            reportsButton.Location = new Point(442, 312);
             reportsButton.Name = "reportsButton";
-            reportsButton.Size = new Size(122, 50);
+            reportsButton.Size = new Size(122, 45);
             reportsButton.TabIndex = 18;
             reportsButton.Text = "Reports";
             reportsButton.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@
             // 
             searchCustomerTextBox.Location = new Point(727, 49);
             searchCustomerTextBox.Name = "searchCustomerTextBox";
-            searchCustomerTextBox.Size = new Size(288, 34);
+            searchCustomerTextBox.Size = new Size(240, 29);
             searchCustomerTextBox.TabIndex = 20;
             searchCustomerTextBox.TextChanged += searchCustomerTextBox_TextChanged;
             // 
@@ -231,35 +231,35 @@
             searchCustomerLabel.AutoSize = true;
             searchCustomerLabel.Location = new Point(764, 18);
             searchCustomerLabel.Name = "searchCustomerLabel";
-            searchCustomerLabel.Size = new Size(216, 28);
+            searchCustomerLabel.Size = new Size(175, 21);
             searchCustomerLabel.TabIndex = 21;
             searchCustomerLabel.Text = "Search Customer Name";
             // 
             // dvgAppointments
             // 
             dvgAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgAppointments.Location = new Point(140, 537);
+            dvgAppointments.Location = new Point(140, 423);
             dvgAppointments.Name = "dvgAppointments";
             dvgAppointments.RowHeadersVisible = false;
             dvgAppointments.RowHeadersWidth = 51;
             dvgAppointments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dvgAppointments.Size = new Size(867, 321);
+            dvgAppointments.Size = new Size(827, 201);
             dvgAppointments.TabIndex = 23;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(766, 466);
+            label1.Location = new Point(766, 352);
             label1.Name = "label1";
-            label1.Size = new Size(197, 28);
+            label1.Size = new Size(158, 21);
             label1.TabIndex = 25;
             label1.Text = "Search Name or Type";
             // 
             // searchAppointmentTextBox
             // 
-            searchAppointmentTextBox.Location = new Point(718, 497);
+            searchAppointmentTextBox.Location = new Point(718, 383);
             searchAppointmentTextBox.Name = "searchAppointmentTextBox";
-            searchAppointmentTextBox.Size = new Size(287, 34);
+            searchAppointmentTextBox.Size = new Size(249, 29);
             searchAppointmentTextBox.TabIndex = 24;
             searchAppointmentTextBox.TextChanged += searchAppointmentTextBox_TextChanged;
             // 
@@ -289,13 +289,13 @@
             label2.Font = new Font("Segoe UI", 14F);
             label2.Location = new Point(140, 7);
             label2.Name = "label2";
-            label2.Size = new Size(65, 32);
+            label2.Size = new Size(53, 25);
             label2.TabIndex = 30;
             label2.Text = "View";
             // 
             // detailedAppointmentDataViewButton
             // 
-            detailedAppointmentDataViewButton.Location = new Point(240, 488);
+            detailedAppointmentDataViewButton.Location = new Point(240, 374);
             detailedAppointmentDataViewButton.Name = "detailedAppointmentDataViewButton";
             detailedAppointmentDataViewButton.Size = new Size(94, 41);
             detailedAppointmentDataViewButton.TabIndex = 31;
@@ -305,7 +305,7 @@
             // 
             // simpleAppointmentDataViewButton
             // 
-            simpleAppointmentDataViewButton.Location = new Point(140, 488);
+            simpleAppointmentDataViewButton.Location = new Point(140, 374);
             simpleAppointmentDataViewButton.Name = "simpleAppointmentDataViewButton";
             simpleAppointmentDataViewButton.Size = new Size(94, 41);
             simpleAppointmentDataViewButton.TabIndex = 32;
@@ -315,9 +315,9 @@
             // 
             // calendarButton
             // 
-            calendarButton.Location = new Point(570, 426);
+            calendarButton.Location = new Point(570, 312);
             calendarButton.Name = "calendarButton";
-            calendarButton.Size = new Size(122, 50);
+            calendarButton.Size = new Size(122, 45);
             calendarButton.TabIndex = 33;
             calendarButton.Text = "Calendar";
             calendarButton.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@
             // MainScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1021, 921);
+            ClientSize = new Size(990, 702);
             Controls.Add(calendarButton);
             Controls.Add(simpleAppointmentDataViewButton);
             Controls.Add(detailedAppointmentDataViewButton);
