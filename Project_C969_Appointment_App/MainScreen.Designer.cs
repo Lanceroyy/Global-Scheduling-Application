@@ -167,7 +167,7 @@
             // 
             customersLabel.AutoSize = true;
             customersLabel.Font = new Font("Segoe UI", 18F);
-            customersLabel.Location = new Point(510, 38);
+            customersLabel.Location = new Point(452, 42);
             customersLabel.Name = "customersLabel";
             customersLabel.Size = new Size(127, 32);
             customersLabel.TabIndex = 12;
@@ -177,7 +177,7 @@
             // 
             appointmentsLabel.AutoSize = true;
             appointmentsLabel.Font = new Font("Segoe UI", 18F);
-            appointmentsLabel.Location = new Point(485, 376);
+            appointmentsLabel.Location = new Point(435, 375);
             appointmentsLabel.Name = "appointmentsLabel";
             appointmentsLabel.Size = new Size(165, 32);
             appointmentsLabel.TabIndex = 14;
@@ -210,7 +210,7 @@
             // 
             // reportsButton
             // 
-            reportsButton.Location = new Point(442, 312);
+            reportsButton.Location = new Point(392, 319);
             reportsButton.Name = "reportsButton";
             reportsButton.Size = new Size(122, 45);
             reportsButton.TabIndex = 18;
@@ -257,9 +257,9 @@
             // 
             // searchAppointmentTextBox
             // 
-            searchAppointmentTextBox.Location = new Point(718, 383);
+            searchAppointmentTextBox.Location = new Point(727, 383);
             searchAppointmentTextBox.Name = "searchAppointmentTextBox";
-            searchAppointmentTextBox.Size = new Size(249, 29);
+            searchAppointmentTextBox.Size = new Size(240, 29);
             searchAppointmentTextBox.TabIndex = 24;
             searchAppointmentTextBox.TextChanged += searchAppointmentTextBox_TextChanged;
             // 
@@ -315,7 +315,7 @@
             // 
             // calendarButton
             // 
-            calendarButton.Location = new Point(570, 312);
+            calendarButton.Location = new Point(520, 319);
             calendarButton.Name = "calendarButton";
             calendarButton.Size = new Size(122, 45);
             calendarButton.TabIndex = 33;

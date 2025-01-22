@@ -40,7 +40,7 @@
             // typesByMonthButton
             // 
             typesByMonthButton.Location = new Point(28, 342);
-            typesByMonthButton.Margin = new Padding(2, 2, 2, 2);
+            typesByMonthButton.Margin = new Padding(2);
             typesByMonthButton.Name = "typesByMonthButton";
             typesByMonthButton.Size = new Size(106, 62);
             typesByMonthButton.TabIndex = 0;
@@ -51,7 +51,7 @@
             // scheduleForUserButton
             // 
             scheduleForUserButton.Location = new Point(147, 342);
-            scheduleForUserButton.Margin = new Padding(2, 2, 2, 2);
+            scheduleForUserButton.Margin = new Padding(2);
             scheduleForUserButton.Name = "scheduleForUserButton";
             scheduleForUserButton.Size = new Size(116, 62);
             scheduleForUserButton.TabIndex = 1;
@@ -62,7 +62,7 @@
             // customerHoursButton
             // 
             customerHoursButton.Location = new Point(283, 342);
-            customerHoursButton.Margin = new Padding(2, 2, 2, 2);
+            customerHoursButton.Margin = new Padding(2);
             customerHoursButton.Name = "customerHoursButton";
             customerHoursButton.Size = new Size(116, 62);
             customerHoursButton.TabIndex = 2;
@@ -74,10 +74,10 @@
             // 
             dvgReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgReports.Location = new Point(28, 60);
-            dvgReports.Margin = new Padding(2, 2, 2, 2);
+            dvgReports.Margin = new Padding(2);
             dvgReports.Name = "dvgReports";
             dvgReports.RowHeadersWidth = 51;
-            dvgReports.Size = new Size(629, 278);
+            dvgReports.Size = new Size(629, 249);
             dvgReports.TabIndex = 3;
             // 
             // label1
@@ -94,7 +94,7 @@
             // exitButton
             // 
             exitButton.Location = new Point(562, 342);
-            exitButton.Margin = new Padding(2, 2, 2, 2);
+            exitButton.Margin = new Padding(2);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(106, 62);
             exitButton.TabIndex = 5;
@@ -104,8 +104,7 @@
             // 
             // ReportsScreen
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(678, 409);
             Controls.Add(exitButton);
             Controls.Add(label1);
@@ -113,7 +112,7 @@
             Controls.Add(customerHoursButton);
             Controls.Add(scheduleForUserButton);
             Controls.Add(typesByMonthButton);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ReportsScreen";
             Text = "ReportsScreen";
             ((System.ComponentModel.ISupportInitialize)dvgReports).EndInit();
