@@ -105,6 +105,7 @@
             // ReportsScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             ClientSize = new Size(678, 409);
             Controls.Add(exitButton);
             Controls.Add(label1);

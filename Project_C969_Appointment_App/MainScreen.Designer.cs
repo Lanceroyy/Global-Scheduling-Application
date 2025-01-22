@@ -326,6 +326,7 @@
             // MainScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             ClientSize = new Size(990, 702);
             Controls.Add(calendarButton);
             Controls.Add(simpleAppointmentDataViewButton);

@@ -78,6 +78,7 @@
             // CalendarScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             ClientSize = new Size(855, 414);
             Controls.Add(exitButton);
             Controls.Add(appointmentTimesDVG);

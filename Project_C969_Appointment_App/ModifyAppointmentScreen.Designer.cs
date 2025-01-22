@@ -321,6 +321,7 @@
             // ModifyAppointmentScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             ClientSize = new Size(900, 629);
             Controls.Add(appTimesDVG);
             Controls.Add(viewAppointmentsLabel);

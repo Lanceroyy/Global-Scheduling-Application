@@ -55,7 +55,7 @@
             // userNameTextBox
             // 
             userNameTextBox.Location = new Point(103, 68);
-            userNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            userNameTextBox.Margin = new Padding(2);
             userNameTextBox.Name = "userNameTextBox";
             userNameTextBox.Size = new Size(181, 29);
             userNameTextBox.TabIndex = 3;
@@ -63,7 +63,7 @@
             // passwordTextBox
             // 
             passwordTextBox.Location = new Point(103, 122);
-            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
+            passwordTextBox.Margin = new Padding(2);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(181, 29);
             passwordTextBox.TabIndex = 4;
@@ -91,7 +91,7 @@
             // loginButton
             // 
             loginButton.Location = new Point(128, 164);
-            loginButton.Margin = new Padding(2, 2, 2, 2);
+            loginButton.Margin = new Padding(2);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(131, 50);
             loginButton.TabIndex = 7;
@@ -153,6 +153,7 @@
             // LoginScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
             ClientSize = new Size(385, 346);
             Controls.Add(timeZoneLabel);
             Controls.Add(languageLabel);
@@ -165,7 +166,7 @@
             Controls.Add(passwordTextBox);
             Controls.Add(userNameTextBox);
             Controls.Add(titleText);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "LoginScreen";
             Text = "Login Screen";
             Load += LoginScreen_Load;
