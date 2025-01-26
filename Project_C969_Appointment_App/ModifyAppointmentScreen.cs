@@ -19,11 +19,11 @@ namespace Project_C969_Appointment_App
         private Appointment _appointment;
         private int _appointmentId;
 
-       // public static int _appointmentId;
+        // public static int _appointmentId;
 
         // Create a ComboBox
         private string toEstStringFormat = "h:mm tt" + " (EST)";
-        private BindingList<Appointment> appointments; 
+        private BindingList<Appointment> appointments;
 
         public ModifyAppointmentScreen(Appointment appointment, int appointmentId)
         {
@@ -38,8 +38,15 @@ namespace Project_C969_Appointment_App
         {
             customerIdLabelValue.Text = _appointment.CustomerId.ToString();
             customerNameLabelValue.Text = _appointment.CustomerName;
+
+            titleTextBox.Text = _appointment.Title;
+            descriptionTextBox.Text = _appointment.Description;
+            locationTextBox.Text = _appointment.Location;
+            contactTextBox.Text = _appointment.Contact;
+            urlTextBox.Text = _appointment.Url;
             typeTextBox.Text = _appointment.Type;
-            
+
+
             //Parse the DateTime Value
             DateTime startDateTimeValue = DateTime.Parse(_appointment.Start.ToString());
             DateTime endDateTimeValue = DateTime.Parse(_appointment.End.ToString());
@@ -109,10 +116,10 @@ namespace Project_C969_Appointment_App
             endESTValue.Text = endTimeEST.ToString(toEstStringFormat);
 
             Appointment.GetAppointments(Appointment.TimePeriod.All);
-            Utils.simpleAppointmentTimesDVG(appTimesDVG);
+            // Utils.simpleAppointmentTimesDVG(appTimesDVG);
 
-            LoadAppointments();
-            InitializeCalendar();
+            // LoadAppointments();
+            // InitializeCalendar();
 
             PopulateFields();
         }
@@ -137,7 +144,7 @@ namespace Project_C969_Appointment_App
         }
 
         private void updateAppointmentButton_Click(object sender, EventArgs e)
-        { 
+        {
             // Return if any fields are empty
             if (Utils.AreAnyTextFieldsEmpty(this)) return;
             if (!Utils.checkForSelectedRow(dvgCustomers)) return;
@@ -155,7 +162,7 @@ namespace Project_C969_Appointment_App
 
                 int appointmentId = _appointmentId;
 
-                
+
 
                 // Retrieve the original appointment details
                 Appointment originalAppointment = Appointment.GetAppointment(appointmentId);
@@ -170,12 +177,12 @@ namespace Project_C969_Appointment_App
                 Appointment updatedAppointment = new Appointment(
                     Convert.ToInt32(customerIdLabelValue.Text),                      // CustomerId
                     userId,                                                          // UserId
-                    "not needed",                                                    // Title
-                    "not needed",                                                    // Description
-                    "not needed",                                                    // Location
-                    "not needed",                                                    // Contact
+                    titleTextBox.Text,                                                    // Title
+                    descriptionTextBox.Text,                                                    // Description
+                    locationTextBox.Text,                                                    // Location
+                    contactTextBox.Text,                                                    // Contact
                     typeTextBox.Text,                                                // Type
-                    "not needed",                                                    // Url
+                    urlTextBox.Text,                                                    // Url
                     Utils.ConvertStringToDateTime(appointmentDatePicker, startTimeComboBox), // Start
                     Utils.ConvertStringToDateTime(appointmentDatePicker, endTimeComboBox),   // End
                     originalAppointment.CreateDate,                                  // CreateDate
@@ -229,8 +236,8 @@ namespace Project_C969_Appointment_App
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            
-            
+
+
         }
 
 
@@ -241,58 +248,60 @@ namespace Project_C969_Appointment_App
 
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             //Duration of the appointment
             if (endTimeComboBox.SelectedItem != null && startTimeComboBox.SelectedItem != null)
             {
-                elaspedTimeValueLabel.Text = "Duration: " + ((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).ToString() + " hours.";
+                TimeSpan duration = (DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem;
+                elapsedTimeValueLabel.Text = $"Duration:    {duration.TotalHours:F1} Hour(s)";
 
                 DateTime startTime = (DateTime)startTimeComboBox.SelectedItem;
                 DateTime startTimeEST = Appointment.convertLocalToEST(startTime);
                 startESTValue.Text = startTimeEST.ToString(toEstStringFormat);
 
             }
-            
+
         }
 
         private void endTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //We can use toString() with the format we want
             string dateTimeString = appointmentDatePicker.Value.ToString("yyyy-MM-dd") + " " + ((DateTime)startTimeComboBox.SelectedItem).ToString("HH:mm:ss");
-           
+
             DateTime dateTime = DateTime.Parse(dateTimeString);
 
             //Duration of the appointment
 
             if (endTimeComboBox.SelectedItem != null && startTimeComboBox.SelectedItem != null)
             {
-                elaspedTimeValueLabel.Text = "Duration: " + ((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).ToString() + " hours.";
+
+                elapsedTimeValueLabel.Text = $"Duration:    {((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).TotalHours:F1} Hour(s)";
 
                 DateTime endTime = (DateTime)endTimeComboBox.SelectedItem;
                 DateTime endTimeEST = Appointment.convertLocalToEST(endTime);
                 endESTValue.Text = endTimeEST.ToString(toEstStringFormat);
 
             }
-            
+
         }
 
         private void InitializeCalendar()
         {
             // Handle date changes
-            viewAppointmentsCalendar.DateChanged += CalendarAppointments_DateChanged;
+            //viewAppointmentsCalendar.DateChanged += CalendarAppointments_DateChanged;
 
             // Populate appointments for the initial date
-            PopulateAppointmentsForDate(viewAppointmentsCalendar.SelectionStart);
+            //PopulateAppointmentsForDate(viewAppointmentsCalendar.SelectionStart);
         }
 
         private void CalendarAppointments_DateChanged(object sender, DateRangeEventArgs e)
         {
             // Refresh appointments when the selected date changes
-            PopulateAppointmentsForDate(e.Start);
+            //PopulateAppointmentsForDate(e.Start);
         }
 
         private void PopulateAppointmentsForDate(DateTime date)
-        {
+        {/*
             if (appointments == null || appointments.Count == 0)
             {
                 MessageBox.Show("No appointments loaded.");
@@ -330,22 +339,31 @@ namespace Project_C969_Appointment_App
                 // Optionally, show a message row if no appointments exist
                 MessageBox.Show("No appointments for this day.");
             }
+            */
         }
 
-
-
-        private void LoadAppointments()
+        private void viewCalendarButton_Click(object sender, EventArgs e)
         {
-            appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
-            if (appointments == null)
-            {
-                appointments = new BindingList<Appointment>();
-            }
-
-            // Adjust appointment times to user's time zone
-            var modifyAppointmentScreen = this;
-            Localization.AdjustToUserTimeZone(appTimesDVG, modifyAppointmentScreen);
+            CalendarScreen calendar = new CalendarScreen();
+            calendar.Show();
         }
+
+
+        /*
+                private void LoadAppointments()
+                {
+                    appointments = Appointment.GetAppointments(Appointment.TimePeriod.All);
+                    if (appointments == null)
+                    {
+                        appointments = new BindingList<Appointment>();
+                    }
+
+                    // Adjust appointment times to user's time zone
+                    var modifyAppointmentScreen = this;
+                    Localization.AdjustToUserTimeZone(appTimesDVG, modifyAppointmentScreen);
+                }
+            }
+        */
     }
 }
 

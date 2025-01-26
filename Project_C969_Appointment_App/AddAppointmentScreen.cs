@@ -17,7 +17,7 @@ namespace Project_C969_Appointment_App
     {
         // Create a ComboBox
         private string toEstStringFormat = "h:mm tt" + " (EST)";
-        private BindingList<Appointment> appointments; 
+        private BindingList<Appointment> appointments;
 
         public AddAppointmentScreen()
         {
@@ -53,12 +53,9 @@ namespace Project_C969_Appointment_App
             startESTValue.Text = startTimeEST.ToString(toEstStringFormat);
             endESTValue.Text = endTimeEST.ToString(toEstStringFormat);
 
-            Appointment.GetAppointments(Appointment.TimePeriod.All);
-            Utils.simpleAppointmentTimesDVG(appTimesDVG);
-
-
-            LoadAppointments();
-            InitializeCalendar();
+           // Appointment.GetAppointments(Appointment.TimePeriod.All);
+           // LoadAppointments();
+           // InitializeCalendar();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -81,7 +78,7 @@ namespace Project_C969_Appointment_App
         }
 
         private void addAppointmentButton_Click(object sender, EventArgs e)
-        {   
+        {
             //Return if any fields are empty
             if (Utils.AreAnyTextFieldsEmpty(this)) return;
 
@@ -94,7 +91,7 @@ namespace Project_C969_Appointment_App
 
 
             try
-            {           
+            {
                 //Get user id from SQL database
                 int userId = Appointment.GetUserId(Utils.currentUser);
 
@@ -108,12 +105,12 @@ namespace Project_C969_Appointment_App
                 Appointment appointment = new Appointment(
                      Convert.ToInt32(customerIdLabelValue.Text), //customerId
                      userId,           //userId
-                     "not needed",     //title
-                     "not needed",     //description
-                     "not needed",     //location
-                     "not needed",     //contact
+                     titleTextBox.Text,     //title
+                     descriptionTextBox.Text,     //description
+                     locationTextBox.Text,     //location
+                     contactTextBox.Text,     //contact
                      typeTextBox.Text, //type
-                     "not needed",     //url
+                     urlTextBox.Text,     //url
                      Utils.ConvertStringToDateTime(appointmentDatePicker, startTimeComboBox),     //start
                      Utils.ConvertStringToDateTime(appointmentDatePicker, endTimeComboBox),     //end
                      DateTime.UtcNow,     //createDate
@@ -166,7 +163,7 @@ namespace Project_C969_Appointment_App
                 MessageBox.Show("Error: " + ex.Message);
             }
 
-           
+
         }
 
         private void appointmentDatePicker_ValueChanged(object sender, EventArgs e)
@@ -176,39 +173,43 @@ namespace Project_C969_Appointment_App
 
         private void timeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             //Duration of the appointment
             if (endTimeComboBox.SelectedItem != null && startTimeComboBox.SelectedItem != null)
             {
-                elaspedTimeValueLabel.Text = "Duration: " + ((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).ToString() + " hours.";
+
+                //elapsedTimeValueLabel.Text = "Duration: " + ((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).ToString() + " hours.";
+
+                elapsedTimeValueLabel.Text = $"Duration:    {((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).TotalHours:F1} Hour(s)";
 
                 DateTime startTime = (DateTime)startTimeComboBox.SelectedItem;
                 DateTime startTimeEST = Appointment.convertLocalToEST(startTime);
                 startESTValue.Text = startTimeEST.ToString(toEstStringFormat);
 
             }
-            
+
         }
 
         private void endTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //We can use toString() with the format we want
             string dateTimeString = appointmentDatePicker.Value.ToString("yyyy-MM-dd") + " " + ((DateTime)startTimeComboBox.SelectedItem).ToString("HH:mm:ss");
-           
+
             DateTime dateTime = DateTime.Parse(dateTimeString);
 
             //Duration of the appointment
 
             if (endTimeComboBox.SelectedItem != null && startTimeComboBox.SelectedItem != null)
             {
-                elaspedTimeValueLabel.Text = "Duration: " + ((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).ToString() + " hours.";
+
+                elapsedTimeValueLabel.Text = $"Duration:    {((DateTime)endTimeComboBox.SelectedItem - (DateTime)startTimeComboBox.SelectedItem).TotalHours:F1} Hour(s)";
 
                 DateTime endTime = (DateTime)endTimeComboBox.SelectedItem;
                 DateTime endTimeEST = Appointment.convertLocalToEST(endTime);
                 endESTValue.Text = endTimeEST.ToString(toEstStringFormat);
 
             }
-            
+
         }
 
         private void InitializeCalendar()
@@ -279,6 +280,12 @@ namespace Project_C969_Appointment_App
             // Adjust appointment times to user's time zone
             var addAppointmentScreen = this;
             Localization.AdjustToUserTimeZone(appTimesDVG, addAppointmentScreen);
+        }
+
+        private void viewCalendarButton_Click(object sender, EventArgs e)
+        {
+            CalendarScreen calendar = new CalendarScreen();
+            calendar.Show();
         }
     }
 }

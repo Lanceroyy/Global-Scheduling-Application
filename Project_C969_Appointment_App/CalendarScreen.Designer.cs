@@ -38,7 +38,7 @@
             // 
             // viewAppointmentsCalendar
             // 
-            viewAppointmentsCalendar.Location = new Point(19, 127);
+            viewAppointmentsCalendar.Location = new Point(16, 76);
             viewAppointmentsCalendar.Margin = new Padding(7);
             viewAppointmentsCalendar.Name = "viewAppointmentsCalendar";
             viewAppointmentsCalendar.TabIndex = 68;

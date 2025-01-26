@@ -32,9 +32,6 @@
             searchCustomerTextBox = new TextBox();
             dvgCustomers = new DataGridView();
             customersLabel = new Label();
-            viewAppointmentsCalendar = new MonthCalendar();
-            viewAppointmentsLabel = new Label();
-            appTimesDVG = new DataGridView();
             cancelButton = new Button();
             updateAppointmentButton = new Button();
             startESTValue = new Label();
@@ -53,28 +50,38 @@
             label1 = new Label();
             endTimeComboBox = new ComboBox();
             label2 = new Label();
-            elaspedTimeValueLabel = new Label();
+            elapsedTimeValueLabel = new Label();
+            urlTextBox = new TextBox();
+            urlLabel = new Label();
+            contactTextBox = new TextBox();
+            contactLabel = new Label();
+            locationTextBox = new TextBox();
+            locationLabel = new Label();
+            descriptionTextBox = new RichTextBox();
+            descriptionLabel = new Label();
+            viewCalendarButton = new Button();
+            titleTextBox = new TextBox();
+            titleLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dvgCustomers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)appTimesDVG).BeginInit();
             SuspendLayout();
             // 
             // searchCustomerLabel
             // 
             searchCustomerLabel.AutoSize = true;
-            searchCustomerLabel.Location = new Point(684, 6);
+            searchCustomerLabel.Location = new Point(554, 459);
             searchCustomerLabel.Margin = new Padding(2, 0, 2, 0);
             searchCustomerLabel.Name = "searchCustomerLabel";
-            searchCustomerLabel.Size = new Size(175, 21);
+            searchCustomerLabel.Size = new Size(164, 20);
             searchCustomerLabel.TabIndex = 37;
             searchCustomerLabel.Text = "Search Customer Name";
             // 
             // searchCustomerTextBox
             // 
-            searchCustomerTextBox.Location = new Point(681, 30);
+            searchCustomerTextBox.Location = new Point(531, 430);
             searchCustomerTextBox.Margin = new Padding(2);
             searchCustomerTextBox.Name = "searchCustomerTextBox";
-            searchCustomerTextBox.Size = new Size(208, 29);
-            searchCustomerTextBox.TabIndex = 36;
+            searchCustomerTextBox.Size = new Size(208, 27);
+            searchCustomerTextBox.TabIndex = 99;
             searchCustomerTextBox.TextChanged += searchCustomerTextBox_TextChanged;
             // 
             // dvgCustomers
@@ -85,67 +92,39 @@
             dvgCustomers.Name = "dvgCustomers";
             dvgCustomers.RowHeadersWidth = 51;
             dvgCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dvgCustomers.Size = new Size(497, 333);
-            dvgCustomers.TabIndex = 35;
+            dvgCustomers.Size = new Size(497, 362);
+            dvgCustomers.TabIndex = 100;
             dvgCustomers.CellContentClick += dvgCustomers_CellContentClick;
             // 
             // customersLabel
             // 
             customersLabel.AutoSize = true;
             customersLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            customersLabel.Location = new Point(531, 30);
+            customersLabel.Location = new Point(554, 21);
             customersLabel.Margin = new Padding(2, 0, 2, 0);
             customersLabel.Name = "customersLabel";
-            customersLabel.Size = new Size(135, 32);
+            customersLabel.Size = new Size(166, 41);
             customersLabel.TabIndex = 34;
             customersLabel.Text = "Customers";
             // 
-            // viewAppointmentsCalendar
-            // 
-            viewAppointmentsCalendar.Location = new Point(69, 451);
-            viewAppointmentsCalendar.Margin = new Padding(7);
-            viewAppointmentsCalendar.Name = "viewAppointmentsCalendar";
-            viewAppointmentsCalendar.TabIndex = 68;
-            // 
-            // viewAppointmentsLabel
-            // 
-            viewAppointmentsLabel.AutoSize = true;
-            viewAppointmentsLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            viewAppointmentsLabel.Location = new Point(494, 410);
-            viewAppointmentsLabel.Margin = new Padding(2, 0, 2, 0);
-            viewAppointmentsLabel.Name = "viewAppointmentsLabel";
-            viewAppointmentsLabel.Size = new Size(218, 30);
-            viewAppointmentsLabel.TabIndex = 70;
-            viewAppointmentsLabel.Text = "View Appointments";
-            // 
-            // appTimesDVG
-            // 
-            appTimesDVG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appTimesDVG.Location = new Point(392, 442);
-            appTimesDVG.Margin = new Padding(2);
-            appTimesDVG.Name = "appTimesDVG";
-            appTimesDVG.RowHeadersWidth = 51;
-            appTimesDVG.Size = new Size(497, 171);
-            appTimesDVG.TabIndex = 71;
-            // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(219, 361);
+            cancelButton.Location = new Point(237, 571);
             cancelButton.Margin = new Padding(2);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(95, 36);
-            cancelButton.TabIndex = 39;
+            cancelButton.TabIndex = 98;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.Click += cancelButton_Click;
             // 
             // updateAppointmentButton
             // 
-            updateAppointmentButton.Location = new Point(104, 361);
+            updateAppointmentButton.Location = new Point(122, 571);
             updateAppointmentButton.Margin = new Padding(2);
             updateAppointmentButton.Name = "updateAppointmentButton";
             updateAppointmentButton.Size = new Size(95, 36);
-            updateAppointmentButton.TabIndex = 38;
+            updateAppointmentButton.TabIndex = 97;
             updateAppointmentButton.Text = "Update";
             updateAppointmentButton.UseVisualStyleBackColor = true;
             updateAppointmentButton.Click += updateAppointmentButton_Click;
@@ -153,183 +132,282 @@
             // startESTValue
             // 
             startESTValue.AutoSize = true;
-            startESTValue.Location = new Point(256, 222);
+            startESTValue.Location = new Point(259, 439);
             startESTValue.Margin = new Padding(2, 0, 2, 0);
             startESTValue.Name = "startESTValue";
-            startESTValue.Size = new Size(85, 21);
+            startESTValue.Size = new Size(79, 20);
             startESTValue.TabIndex = 66;
             startESTValue.Text = "5555 (EST)";
             // 
             // endESTValue
             // 
             endESTValue.AutoSize = true;
-            endESTValue.Location = new Point(256, 259);
+            endESTValue.Location = new Point(259, 476);
             endESTValue.Margin = new Padding(2, 0, 2, 0);
             endESTValue.Name = "endESTValue";
-            endESTValue.Size = new Size(85, 21);
+            endESTValue.Size = new Size(79, 20);
             endESTValue.TabIndex = 67;
             endESTValue.Text = "5555 (EST)";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(54, 338);
+            label3.Location = new Point(72, 548);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(294, 21);
+            label3.Size = new Size(275, 20);
             label3.TabIndex = 61;
             label3.Text = "Business Hours: 9AM - 5PM EST, Mon-Fri";
             // 
             // typeLabel
             // 
             typeLabel.AutoSize = true;
-            typeLabel.Location = new Point(54, 143);
+            typeLabel.Location = new Point(46, 273);
             typeLabel.Margin = new Padding(2, 0, 2, 0);
             typeLabel.Name = "typeLabel";
-            typeLabel.Size = new Size(42, 21);
+            typeLabel.Size = new Size(43, 20);
             typeLabel.TabIndex = 40;
-            typeLabel.Text = "Type";
+            typeLabel.Text = "Type:";
             // 
             // typeTextBox
             // 
-            typeTextBox.Location = new Point(103, 143);
+            typeTextBox.Location = new Point(104, 273);
             typeTextBox.Margin = new Padding(2);
             typeTextBox.Name = "typeTextBox";
-            typeTextBox.Size = new Size(212, 29);
-            typeTextBox.TabIndex = 41;
+            typeTextBox.Size = new Size(258, 27);
+            typeTextBox.TabIndex = 91;
             // 
             // customerIdLabel
             // 
             customerIdLabel.AutoSize = true;
-            customerIdLabel.Location = new Point(69, 72);
+            customerIdLabel.Location = new Point(70, 48);
             customerIdLabel.Margin = new Padding(2, 0, 2, 0);
             customerIdLabel.Name = "customerIdLabel";
-            customerIdLabel.Size = new Size(28, 21);
+            customerIdLabel.Size = new Size(27, 20);
             customerIdLabel.TabIndex = 42;
             customerIdLabel.Text = "ID:";
             // 
             // dateLabel
             // 
             dateLabel.AutoSize = true;
-            dateLabel.Location = new Point(54, 182);
+            dateLabel.Location = new Point(46, 399);
             dateLabel.Margin = new Padding(2, 0, 2, 0);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(42, 21);
+            dateLabel.Size = new Size(44, 20);
             dateLabel.TabIndex = 44;
-            dateLabel.Text = "Date";
+            dateLabel.Text = "Date:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label4.Location = new Point(87, 30);
+            label4.Location = new Point(90, 6);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(234, 30);
+            label4.Size = new Size(296, 38);
             label4.TabIndex = 48;
             label4.Text = "Update Appointment";
             // 
             // customerNameLabel
             // 
             customerNameLabel.AutoSize = true;
-            customerNameLabel.Location = new Point(45, 103);
+            customerNameLabel.Location = new Point(46, 79);
             customerNameLabel.Margin = new Padding(2, 0, 2, 0);
             customerNameLabel.Name = "customerNameLabel";
-            customerNameLabel.Size = new Size(55, 21);
+            customerNameLabel.Size = new Size(52, 20);
             customerNameLabel.TabIndex = 49;
             customerNameLabel.Text = "Name:";
             // 
             // customerIdLabelValue
             // 
             customerIdLabelValue.AutoSize = true;
-            customerIdLabelValue.Location = new Point(102, 72);
+            customerIdLabelValue.Location = new Point(103, 48);
             customerIdLabelValue.Margin = new Padding(2, 0, 2, 0);
             customerIdLabelValue.Name = "customerIdLabelValue";
-            customerIdLabelValue.Size = new Size(171, 21);
+            customerIdLabelValue.Size = new Size(162, 20);
             customerIdLabelValue.TabIndex = 50;
             customerIdLabelValue.Text = "Please Select Customer";
             // 
             // customerNameLabelValue
             // 
             customerNameLabelValue.AutoSize = true;
-            customerNameLabelValue.Location = new Point(104, 103);
+            customerNameLabelValue.Location = new Point(105, 79);
             customerNameLabelValue.Margin = new Padding(2, 0, 2, 0);
             customerNameLabelValue.Name = "customerNameLabelValue";
-            customerNameLabelValue.Size = new Size(171, 21);
+            customerNameLabelValue.Size = new Size(162, 20);
             customerNameLabelValue.TabIndex = 51;
             customerNameLabelValue.Text = "Please Select Customer";
             // 
             // appointmentDatePicker
             // 
-            appointmentDatePicker.Location = new Point(102, 182);
+            appointmentDatePicker.Location = new Point(105, 399);
             appointmentDatePicker.Margin = new Padding(2);
             appointmentDatePicker.Name = "appointmentDatePicker";
-            appointmentDatePicker.Size = new Size(213, 29);
-            appointmentDatePicker.TabIndex = 52;
+            appointmentDatePicker.Size = new Size(213, 27);
+            appointmentDatePicker.TabIndex = 94;
             appointmentDatePicker.ValueChanged += appointmentDatePicker_ValueChanged;
             // 
             // startTimeComboBox
             // 
             startTimeComboBox.FormattingEnabled = true;
-            startTimeComboBox.Location = new Point(102, 220);
+            startTimeComboBox.Location = new Point(105, 437);
             startTimeComboBox.Margin = new Padding(2);
             startTimeComboBox.Name = "startTimeComboBox";
-            startTimeComboBox.Size = new Size(150, 29);
-            startTimeComboBox.TabIndex = 54;
+            startTimeComboBox.Size = new Size(150, 28);
+            startTimeComboBox.TabIndex = 95;
             startTimeComboBox.SelectedIndexChanged += timeComboBox_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 222);
+            label1.Location = new Point(8, 437);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(80, 21);
+            label1.Size = new Size(80, 20);
             label1.TabIndex = 56;
-            label1.Text = "Start Time";
+            label1.Text = "Start Time:";
             // 
             // endTimeComboBox
             // 
             endTimeComboBox.FormattingEnabled = true;
-            endTimeComboBox.Location = new Point(102, 259);
+            endTimeComboBox.Location = new Point(105, 476);
             endTimeComboBox.Margin = new Padding(2);
             endTimeComboBox.Name = "endTimeComboBox";
-            endTimeComboBox.Size = new Size(150, 29);
-            endTimeComboBox.TabIndex = 57;
+            endTimeComboBox.Size = new Size(150, 28);
+            endTimeComboBox.TabIndex = 96;
             endTimeComboBox.SelectedIndexChanged += endTimeComboBox_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 261);
+            label2.Location = new Point(11, 476);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(74, 21);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 58;
-            label2.Text = "End Time";
+            label2.Text = "End Time:";
             // 
-            // elaspedTimeValueLabel
+            // elapsedTimeValueLabel
             // 
-            elaspedTimeValueLabel.AutoSize = true;
-            elaspedTimeValueLabel.Location = new Point(15, 297);
-            elaspedTimeValueLabel.Margin = new Padding(2, 0, 2, 0);
-            elaspedTimeValueLabel.Name = "elaspedTimeValueLabel";
-            elaspedTimeValueLabel.Size = new Size(121, 21);
-            elaspedTimeValueLabel.TabIndex = 59;
-            elaspedTimeValueLabel.Text = " Duration: 0:230";
+            elapsedTimeValueLabel.AutoSize = true;
+            elapsedTimeValueLabel.Location = new Point(12, 517);
+            elapsedTimeValueLabel.Margin = new Padding(2, 0, 2, 0);
+            elapsedTimeValueLabel.Name = "elapsedTimeValueLabel";
+            elapsedTimeValueLabel.Size = new Size(133, 20);
+            elapsedTimeValueLabel.TabIndex = 59;
+            elapsedTimeValueLabel.Text = " Duration:      0:230";
+            // 
+            // urlTextBox
+            // 
+            urlTextBox.Location = new Point(104, 306);
+            urlTextBox.Name = "urlTextBox";
+            urlTextBox.Size = new Size(258, 27);
+            urlTextBox.TabIndex = 92;
+            // 
+            // urlLabel
+            // 
+            urlLabel.AutoSize = true;
+            urlLabel.Location = new Point(50, 306);
+            urlLabel.Name = "urlLabel";
+            urlLabel.Size = new Size(38, 20);
+            urlLabel.TabIndex = 95;
+            urlLabel.Text = "URL:";
+            // 
+            // contactTextBox
+            // 
+            contactTextBox.Location = new Point(104, 240);
+            contactTextBox.Name = "contactTextBox";
+            contactTextBox.Size = new Size(258, 27);
+            contactTextBox.TabIndex = 90;
+            // 
+            // contactLabel
+            // 
+            contactLabel.AutoSize = true;
+            contactLabel.Location = new Point(29, 240);
+            contactLabel.Name = "contactLabel";
+            contactLabel.Size = new Size(63, 20);
+            contactLabel.TabIndex = 93;
+            contactLabel.Text = "Contact:";
+            // 
+            // locationTextBox
+            // 
+            locationTextBox.Location = new Point(104, 207);
+            locationTextBox.Name = "locationTextBox";
+            locationTextBox.Size = new Size(258, 27);
+            locationTextBox.TabIndex = 89;
+            // 
+            // locationLabel
+            // 
+            locationLabel.AutoSize = true;
+            locationLabel.Location = new Point(23, 210);
+            locationLabel.Name = "locationLabel";
+            locationLabel.Size = new Size(69, 20);
+            locationLabel.TabIndex = 91;
+            locationLabel.Text = "Location:";
+            // 
+            // descriptionTextBox
+            // 
+            descriptionTextBox.Location = new Point(104, 135);
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(259, 66);
+            descriptionTextBox.TabIndex = 88;
+            descriptionTextBox.Text = "";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new Point(10, 138);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(88, 20);
+            descriptionLabel.TabIndex = 89;
+            descriptionLabel.Text = "Description:";
+            // 
+            // viewCalendarButton
+            // 
+            viewCalendarButton.Location = new Point(166, 340);
+            viewCalendarButton.Name = "viewCalendarButton";
+            viewCalendarButton.Size = new Size(116, 45);
+            viewCalendarButton.TabIndex = 93;
+            viewCalendarButton.Text = "View Calendar";
+            viewCalendarButton.UseVisualStyleBackColor = true;
+            viewCalendarButton.Click += viewCalendarButton_Click;
+            // 
+            // titleTextBox
+            // 
+            titleTextBox.Location = new Point(105, 102);
+            titleTextBox.Name = "titleTextBox";
+            titleTextBox.Size = new Size(258, 27);
+            titleTextBox.TabIndex = 87;
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Location = new Point(58, 105);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(41, 20);
+            titleLabel.TabIndex = 86;
+            titleLabel.Text = "Title:";
             // 
             // ModifyAppointmentScreen
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoScroll = true;
-            ClientSize = new Size(900, 629);
-            Controls.Add(appTimesDVG);
-            Controls.Add(viewAppointmentsLabel);
-            Controls.Add(viewAppointmentsCalendar);
+            ClientSize = new Size(900, 618);
+            Controls.Add(urlTextBox);
+            Controls.Add(urlLabel);
+            Controls.Add(contactTextBox);
+            Controls.Add(contactLabel);
+            Controls.Add(locationTextBox);
+            Controls.Add(locationLabel);
+            Controls.Add(descriptionTextBox);
+            Controls.Add(descriptionLabel);
+            Controls.Add(viewCalendarButton);
+            Controls.Add(titleTextBox);
+            Controls.Add(titleLabel);
             Controls.Add(endESTValue);
             Controls.Add(startESTValue);
             Controls.Add(label3);
-            Controls.Add(elaspedTimeValueLabel);
+            Controls.Add(elapsedTimeValueLabel);
             Controls.Add(label2);
             Controls.Add(endTimeComboBox);
             Controls.Add(label1);
@@ -354,7 +432,6 @@
             Text = "Modify Appointment Screen";
             Load += ModifyAppointmentScreen_Load;
             ((System.ComponentModel.ISupportInitialize)dvgCustomers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)appTimesDVG).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -364,9 +441,6 @@
         private TextBox searchCustomerTextBox;
         public DataGridView dvgCustomers;
         private Label customersLabel;
-        private MonthCalendar viewAppointmentsCalendar;
-        private Label viewAppointmentsLabel;
-        private DataGridView appTimesDVG;
         private Button cancelButton;
         private Button updateAppointmentButton;
         private Label startESTValue;
@@ -385,6 +459,17 @@
         private Label label1;
         private ComboBox endTimeComboBox;
         private Label label2;
-        private Label elaspedTimeValueLabel;
+        private Label elapsedTimeValueLabel;
+        private TextBox urlTextBox;
+        private Label urlLabel;
+        private TextBox contactTextBox;
+        private Label contactLabel;
+        private TextBox locationTextBox;
+        private Label locationLabel;
+        private RichTextBox descriptionTextBox;
+        private Label descriptionLabel;
+        private Button viewCalendarButton;
+        private TextBox titleTextBox;
+        private Label titleLabel;
     }
 }

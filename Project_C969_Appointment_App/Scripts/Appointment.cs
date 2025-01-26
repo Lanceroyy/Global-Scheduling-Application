@@ -62,7 +62,7 @@ namespace Project_C969_Appointment_App.Scripts
             LastUpdateBy = lastUpdateBy;
         }
 
-
+        //"title, description, location, contact, type, URL, Start Date/Time, End Date/Time
 
         // Empty Constructor (optional, if needed)
         public Appointment() { }
@@ -92,12 +92,12 @@ namespace Project_C969_Appointment_App.Scripts
                     //We do MySqlCommand.Parameteres and use the AddWithValue method. We then pass in our placeholder and the value)
                     command.Parameters.AddWithValue("@CustomerId", appointment.CustomerId);
                     command.Parameters.AddWithValue("@UserId", appointment.UserId);
-                    command.Parameters.AddWithValue("@Title", "not needed");
-                    command.Parameters.AddWithValue("@Description", "not needed");
-                    command.Parameters.AddWithValue("@Location", "not needed");
-                    command.Parameters.AddWithValue("@Contact", "not needed");
+                    command.Parameters.AddWithValue("@Title", appointment.Title);
+                    command.Parameters.AddWithValue("@Description", appointment.Description);
+                    command.Parameters.AddWithValue("@Location", appointment.Location);
+                    command.Parameters.AddWithValue("@Contact", appointment.Contact);
                     command.Parameters.AddWithValue("@Type", appointment.Type);
-                    command.Parameters.AddWithValue("@Url", "not needed");
+                    command.Parameters.AddWithValue("@Url", appointment.Url);
                     command.Parameters.AddWithValue("@Start", appointment.Start);
                     command.Parameters.AddWithValue("@End", appointment.End);
                     command.Parameters.AddWithValue("@CreateDate", appointment.CreateDate);
@@ -138,7 +138,7 @@ namespace Project_C969_Appointment_App.Scripts
 
             if (timePeriod == TimePeriod.All)
             {
-                query = "SELECT a.appointmentId, a.customerId, a.userId, a.type, a.start, a.end, " +
+                query = "SELECT a.appointmentId, a.customerId, a.userId, a.title, a.description, a.location, a.contact, a.type, a.url, a.start, a.end, " +
                            "a.createDate, a.createdBy, a.lastUpdate, a.lastUpdateBy, " +
                            "c.customerName " +
                            "FROM appointment a " +
@@ -146,7 +146,7 @@ namespace Project_C969_Appointment_App.Scripts
             }
             else if (timePeriod == TimePeriod.Week)
             {
-                query = "SELECT a.appointmentId, a.customerId, a.userId, a.type, a.start, a.end, " +
+                query = "SELECT a.appointmentId, a.customerId, a.userId, a.title, a.description, a.location, a.contact, a.type, a.url, a.start, a.end, " +
                                   "a.createDate, a.createdBy, a.lastUpdate, a.lastUpdateBy, " +
                                   "c.customerName " +
                                   "FROM appointment a " +
@@ -157,7 +157,7 @@ namespace Project_C969_Appointment_App.Scripts
             }
             else if (timePeriod == TimePeriod.Month) 
             {
-                query = "SELECT a.appointmentId, a.customerId, a.userId, a.type, a.start, a.end, " +
+                query = "SELECT a.appointmentId, a.customerId, a.userId, a.title, a.description, a.location, a.contact, a.type, a.url, a.start, a.end, " +
                               "a.createDate, a.createdBy, a.lastUpdate, a.lastUpdateBy, " +
                               "c.customerName " +
                               "FROM appointment a " +
@@ -201,7 +201,12 @@ namespace Project_C969_Appointment_App.Scripts
                                 CustomerId = reader.GetInt32("customerId"),
                                 CustomerName = reader.GetString("customerName"), // Include customer name
                                 UserId = reader.GetInt32("userId"),
+                                Title = reader.GetString("title"),
+                                Description = reader.GetString("description"),
+                                Location = reader.GetString("location"),
+                                Contact = reader.GetString("contact"),
                                 Type = reader.GetString("type"),
+                                Url = reader.GetString("url"),
                                 Start = reader.GetDateTime("start"),
                                 End = reader.GetDateTime("end"),
                                 CreateDate = reader.GetDateTime("createDate"),
@@ -306,7 +311,12 @@ namespace Project_C969_Appointment_App.Scripts
                             AppointmentId = reader.GetInt32("appointmentId"),
                             CustomerId = reader.GetInt32("customerId"),
                             UserId = reader.GetInt32("userId"),
+                            Title = reader.GetString("title"),
+                            Description = reader.GetString("description"),
+                            Location = reader.GetString("location"),
+                            Contact = reader.GetString("contact"),
                             Type = reader.GetString("type"),
+                            Url = reader.GetString("url"),
                             Start = reader.GetDateTime("start"),
                             End = reader.GetDateTime("end"),
                             CreateDate = reader.GetDateTime("createDate"),
@@ -350,7 +360,12 @@ namespace Project_C969_Appointment_App.Scripts
                     "UPDATE appointment SET " +
                     "customerId = @CustomerId, " +
                     "userId = @UserId, " +
+                    "title = @Title, " +
+                    "description = @Description, " +
+                    "location = @Location, " +
+                    "contact = @Contact, " +
                     "type = @Type, " +
+                    "url = @Url, " +
                     "start = @Start, " +
                     "end = @End, " +
                     "lastUpdate = @LastUpdate, " +
@@ -360,7 +375,12 @@ namespace Project_C969_Appointment_App.Scripts
                     command.Parameters.AddWithValue("@AppointmentId", appointmentId);
                     command.Parameters.AddWithValue("@CustomerId", appointment.CustomerId);
                     command.Parameters.AddWithValue("@UserId", appointment.UserId);
+                    command.Parameters.AddWithValue("@Title", appointment.Title);
+                    command.Parameters.AddWithValue("@Description", appointment.Description);
+                    command.Parameters.AddWithValue("@Location", appointment.Location);
+                    command.Parameters.AddWithValue("@Contact", appointment.Contact);
                     command.Parameters.AddWithValue("@Type", appointment.Type);
+                    command.Parameters.AddWithValue("@Url", appointment.Url);
                     command.Parameters.AddWithValue("@Start", appointment.Start);
                     command.Parameters.AddWithValue("@End", appointment.End);
                     command.Parameters.AddWithValue("@LastUpdate", appointment.LastUpdate);

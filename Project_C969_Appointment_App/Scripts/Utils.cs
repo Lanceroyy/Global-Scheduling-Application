@@ -346,9 +346,50 @@ namespace Project_C969_Appointment_App.Scripts
 
             appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
+                DataPropertyName = "title",
+                HeaderText = "Title",
+                Name = "title",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+            appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "description",
+                HeaderText = "Description",
+                Name = "description",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+            appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "location",
+                HeaderText = "Location",
+                Name = "location",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+            appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "contact",
+                HeaderText = "Contact",
+                Name = "contact",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+
+            appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
                 DataPropertyName = "type",
                 HeaderText = "Type",
                 Name = "type",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+
+            appointmentsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "url",
+                HeaderText = "URL",
+                Name = "url",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             });
 
