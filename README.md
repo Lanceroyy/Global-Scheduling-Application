@@ -51,12 +51,12 @@ The Global Scheduling Application is a desktop-based solution developed in C# to
    ```bash
    git clone https://github.com/YourUsername/Global-Scheduling-Application.git
 	
-	1.Using MySQL, create a Schema, mine was called "client_schedule"
-	2.Use C969_DB_Setup.sql (you can also open in text editor then copy commands into MySQL)
-	3.Use LoadData.sql (you can also open in text editor then copy commands into MySQL)
-    4.Open the project in Visual Studio.
-    5.Update database connection settings in the code.
-    6.Build and run the application.
+	1. Using MySQL, create a Schema, mine was called "client_schedule"
+	2. Use C969_DB_Setup.sql (you can also open in text editor then copy commands into MySQL)
+	3. Use LoadData.sql (you can also open in text editor then copy commands into MySQL)
+    4. Open the project in Visual Studio.
+    5. Update database connection settings in the code.
+    6. Build and run the application.
 
 Project Structure
 
